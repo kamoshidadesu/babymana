@@ -1,17 +1,17 @@
 <%= form_with(model: @event, local: true) do |form| %>
 
   <div class="title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label "予定" %>
+    <%= form.text_field :schedule %>
   </div>
 
   <div class="time">
-    <%= form.label :start_time %>
+    <%= form.label "日時" %>
     <%= form.datetime_select :start_time %>
   </div>
 
   <div class="content">
-    <%= form.label :content %>
+    <%= form.label "内容" %>
     <%= form.text_field :content %>
   </div>
 
