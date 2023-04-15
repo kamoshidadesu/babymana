@@ -1,0 +1,27 @@
+.schedule{
+  display: flex;
+  justify-content: center;
+}
+
+.schedule-list{
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.calendar-icon{
+  width: 5vh;
+}
+
+.clock-icon{
+  width: 5vh;
+}
+
+.content-icon{
+  width: 5vh;
+  margin-bottom: 20px;
+}
+
+.content-label{
+  
+  
+}
