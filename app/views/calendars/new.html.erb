@@ -1,21 +1,27 @@
 <%= render "shared/header" %>
-  <%= form_with(model: @event, local: true) do |form| %>
-  <div class ="schedule">
+  <%= form_with(model: @calendar, local: true) do |form| %>
+  <div class = "schedule">
     <div class = "schedule-list">
-    <div class="title" >
-      <%= link_to image_tag("calendar.png", class:"calendar-icon"), "/" %>
-      <%= form.label "予定"  %>
-      <%= form.text_field :schedule, placeholder: 'タイトルを追加'%>
+      <div class="title" >
+        <%= image_tag "calendar.png", class:"calendar-icon"  %>
+        <%= form.label "予定"  %>
+        <%= form.text_field :schedule, placeholder: 'タイトルを追加'%>
     </div>
 
     <div class="time">
-    <%= link_to image_tag("clock.png", class:"clock-icon"), "/" %>
-      <%= form.label "日時" %>
+      <%= image_tag "clock.png", class:"clock-icon" %>
+      <%= form.label "日時(開始)" %>
       <%= form.datetime_select :start_time %>
     </div>
 
+    <div class="time">
+      <%= image_tag "clock.png", class:"clock-icon" %>
+      <%= form.label "日時(終了)" %>
+      <%= form.datetime_select :end_time %>
+    </div>
+
     <div class="content">
-    <%= link_to image_tag("content.png", class:"content-icon"), "/" %>
+      <%= image_tag "content.png", class:"content-icon" %>
       <%= form.label "内容", class:"content-label" %>
       <%= form.text_area :content, placeholder: '予定内容' %>
     </div>
