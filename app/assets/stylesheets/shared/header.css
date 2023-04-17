@@ -15,7 +15,7 @@
   
 }
 
-.baby-icon_red {
+.header-baby-icon {
   width: 5vw;
 }
 
@@ -28,9 +28,6 @@
   text-shadow: 6px 4px 2px #ca353b;
 }
 
-.baby-icon_yellow {
-  width: 5vw;
-}
 
 .search-icon {
   width: 100%;
@@ -53,6 +50,11 @@
   min-width: 200px;
   list-style: none;
   
+}
+
+.list-left-icon{
+  width: 3vh;
+  margin-right: 5px;
 }
 
 .calendars-list {
