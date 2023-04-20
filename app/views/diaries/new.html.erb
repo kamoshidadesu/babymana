@@ -2,9 +2,15 @@
   <%= render "shared/header" %>
 
   <div class="diary-main">
-   <div class="diary-main-top">
+    <div class="diary-main-top">
     <h2 class="diary-title">★成長日記★</h2>
-    <%= form_with(model: @diaries, local: true) do |form| %>
+    <%= form_with model: @diaries, local: true do |form| %>
+
+  <%# 日付 %>
+      <div class="weight-bold-text">
+        日にち
+      </div>
+    <%= form.date_field :posted_date , class: "posted_date" %>
 
   <%# 嬉しかったこと %>
     <div class="happy-content">
