@@ -1,4 +1,4 @@
-.daiary-main{
+.diary-main{
   height: 50%;
   width: 50%;
   margin-left: 350px;
@@ -12,7 +12,7 @@
 }
 
 
-.daiary-title{
+.diary-title{
   color: blue;
   background-color: blueviolet;
 }

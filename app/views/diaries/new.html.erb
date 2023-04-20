@@ -1,9 +1,9 @@
-<div class="daiary-contents">
+<div class="diary-contents">
   <%= render "shared/header" %>
 
-  <div class="daiary-main">
-   <div class="daiary-main-top">
-    <h2 class="daiary-title">★成長日記★</h2>
+  <div class="diary-main">
+   <div class="diary-main-top">
+    <h2 class="diary-title">★成長日記★</h2>
     <%= form_with(model: @diaries, local: true) do |form| %>
 
   <%# 嬉しかったこと %>
@@ -16,11 +16,11 @@
   <%#/ 嬉しかったこと %>
 
   <%# 日記 %>
-    <div class="daiary-content">
+    <div class="diary-content">
       <div class="weight-bold-text">
         日記
       </div>
-      <%= form.text_area :daiary , class: "text", placeholder: "今日の出来事"%>
+      <%= form.text_area :diary , class: "text", placeholder: "今日の出来事"%>
     </div>
   <%#/ 日記 %>
     <%# 写真 %>
