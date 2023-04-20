@@ -1,0 +1,36 @@
+.daiary-main{
+  height: 50%;
+  width: 50%;
+  margin-left: 350px;
+  padding-bottom: 50px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: aquamarine;
+}
+
+
+.daiary-title{
+  color: blue;
+  background-color: blueviolet;
+}
+
+.weight-bold-text{
+  font-size: 16px;
+  font-weight: bold;
+}
+.text{
+  width: 100%;
+  padding: 16px 16px 8px;
+  resize: none;
+}
+
+.sell-btn{
+  width: 100%;
+}
+
+.picture{
+  margin-bottom: 50px;
+}

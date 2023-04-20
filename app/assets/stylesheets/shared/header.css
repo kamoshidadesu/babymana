@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-page-header {
+  width: 100vw;
+  padding: 2vh 15vw;
+  display: flex;
+  background-color: pink;
+}
+
+.icon-bar-contents{
+  display: flex;
+  align-items: center;
+  
+}
+
+.header-baby-icon {
+  width: 5vw;
+}
+
+.top-list {
+  font-size: 30px;
+  color: rgb(138, 255, 80);
+  font-weight: 800;
+  text-decoration: none;
+  font-family: fantasy;
+  text-shadow: 6px 4px 2px #ca353b;
+}
+
+
+.search-icon {
+  width: 100%;
+}
+
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
+  
+  
+}
+
+.lists-left {
+  display: flex;
+  min-width: 200px;
+  list-style: none;
+  
+}
+
+.list-left-icon{
+  width: 3vh;
+  margin-right: 5px;
+}
+
+.calendars-list {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: lightsalmon;
+  
+}
+
+.diaries-list {
+  text-decoration: none;
+  color: lightsalmon;
+  margin-right: 3vw;
+}
+
+.managements-list {
+  text-decoration: none;
+  color: lightsalmon;
+}
+
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+  text-decoration: none;
+}
+
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}

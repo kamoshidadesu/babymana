@@ -1,0 +1,40 @@
+.fotter {
+  width: 100%;
+  min-width: 800px;
+  height: 115px;
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+}
+
+.fotter-text-wrap {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.fotter-text {
+  color: #333;
+  font-size: 12px;
+  margin: 0 10px;
+}
+
+.fotter-bar-contents{
+  display: flex;
+  justify-content: center;
+}
+
+.fotter-logo {
+  font-size: 20px;
+  color: rgb(138, 255, 80);
+  text-decoration: none;
+  font-family: fantasy;
+  text-shadow: 6px 4px 2px #ca353b;
+}
+
+.fotter-baby-icon{
+width: 2vw;
+
+}
+
+

@@ -1,0 +1,54 @@
+.management-main{
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
+}
+
+.management-date{
+  flex-direction: column;
+}
+
+.table{
+border: solid 1px black;
+width: 100vh;
+border-collapse: collapse;
+}
+
+.management-title{
+  border: solid 1px black;
+  border-collapse: collapse ;
+  
+}
+
+.management-top-content{
+  border: solid 1px black;
+  border-collapse: collapse ;
+}
+
+.management-content-lists{
+display: flex;
+padding: 8px 30px 10px 30px;
+margin-bottom: 5px;
+}
+
+.management-time{
+  color: red;
+  width: 10%;
+  padding: 5px 10px 5px 15px;
+  border: solid 1px black;
+}
+
+.management-content{
+  width: 30%;
+  border: solid 1px black;
+  margin: 0px 5px ; 
+}
+.management-btn-contents{
+  display: flex;
+  justify-content: center;
+}
+
+.management-sell-btn{
+  margin-bottom: 50px;
+}
+

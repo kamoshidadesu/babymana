@@ -1,0 +1,28 @@
+<header class='top-page-header'>
+  <div class='icon-bar-contents'>
+    <%= link_to image_tag("baby_red.png", class:"header-baby-icon"), "/" %>
+    <%= link_to 'babymana', "/", class: "top-list" %>
+    <%= link_to image_tag("baby_yellow.png", class:"header-baby-icon"), "/" %>
+  </div>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <%= image_tag "calendar.png", class:"list-left-icon" %>
+      <li><%= link_to 'カレンダー', "#", class: "calendars-list" %></li>
+      <%= image_tag "diary.png", class:"list-left-icon" %>
+      <li><%= link_to '日記', "#", class: "diaries-list" %></li>
+      <%= image_tag "management.png", class:"list-left-icon" %>
+      <li><%= link_to '記録', "#", class: "managements-list" %></li>
+    </ul>
+    <ul class='lists-right'>
+      
+      <%# if user_signed_in? %>
+        <li><%= link_to 'hoge', class: "user-nickname"  %></li>
+        <li><%= link_to 'ログアウト',  method: :delete, class: "logout" %></li> 
+      <%#  else %>
+        <li><%= link_to 'ログイン',  class: "login" %></li>
+        <li><%= link_to '新規登録',  class: "sign-up" %></li>
+      <%# end %>
+      
+    </ul>
+  </div>
+</header>
