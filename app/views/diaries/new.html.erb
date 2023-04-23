@@ -3,31 +3,31 @@
 
   <div class="diary-main">
     <div class="diary-main-top">
-    <h2 class="diary-title">★成長日記★</h2>
-    <%= form_with model: @diaries, local: true do |form| %>
+      <h2 class="diary-title">★成長日記★</h2>
+      <%= form_with(model: @diary, local: true) do |form| %>
 
   <%# 日付 %>
       <div class="weight-bold-text">
         日にち
       </div>
-    <%= form.date_field :posted_date , class: "posted_date" %>
+      <%= form.datetime_select :start_time , class: "posted_date" %>
 
   <%# 嬉しかったこと %>
-    <div class="happy-content">
-      <div class="weight-bold-text">
-        嬉しかったこと、良かったこと, 自分を褒めてあげたいこと
+      <div class="happy-content">
+        <div class="weight-bold-text">
+          嬉しかったこと、良かったこと, 自分を褒めてあげたいこと
+        </div>
+        <%= form.text_field :happy , class: "text", placeholder: "今日あった出来事で最低１つ、ポジティブな事を記入してね"%>
       </div>
-      <%= form.text_field :happy , class: "text", placeholder: "今日あった出来事で最低１つ、ポジティブな事を記入してね"%>
-    </div>
   <%#/ 嬉しかったこと %>
 
   <%# 日記 %>
-    <div class="diary-content">
-      <div class="weight-bold-text">
-        日記
+      <div class="diary-content">
+        <div class="weight-bold-text">
+          日記
+        </div>
+        <%= form.text_area :diary , class: "text", placeholder: "今日の出来事"%>
       </div>
-      <%= form.text_area :diary , class: "text", placeholder: "今日の出来事"%>
-    </div>
   <%#/ 日記 %>
     <%# 写真 %>
       <div class="img-upload">
@@ -47,8 +47,15 @@
   </div>
   <% end %>
 
-  <%= month_calendar do |date| %>
-  <%= date.day %>
-<% end %>
+  <%= month_calendar events: @diaries do |date, diaries| %>
+      <%= date.day %>
+      <% diaries.each do |diary| %>
+        <div>
+          <%= diary.happy %>
+        </div>
+      <% end %>
+	<% end %>
+  </div>
 </div>
+
 <%= render "shared/fotter" %>

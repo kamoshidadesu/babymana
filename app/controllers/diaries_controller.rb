@@ -1,15 +1,13 @@
 class DiariesController < ApplicationController
-  def index
-    @diaries = Diary.all
-  end
 
   def new
-    @diaries = Diary.new
+    @diaries = Diary.all
+    @diary = Diary.new
   end
   
   def create
-    if
-    Diary.create(diary_params)
+    @diary = Diary.new(diary_params)
+    if @diary.save
       redirect_to root_path
     else
       render :new
@@ -19,7 +17,7 @@ class DiariesController < ApplicationController
   private
 
   def diary_params
-    params.require(:diary).permit(:image, :happy, :diary, :posted_date).merge(user_id: current_user.id)
+    params.require(:diary).permit(:image, :happy, :diary, :start_time).merge(user_id: current_user.id)
   end
 
 
