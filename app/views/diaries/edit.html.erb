@@ -1,26 +1,23 @@
-<div class="diary-show-contents">
+<div class="diary-contents">
   <%= render "shared/header" %>
 
   <div class="diary-main">
     <div class="diary-main-top">
       <h2 class="diary-title">★成長日記★</h2>
+      <%= form_with(model: @diary, local: true) do |form| %>
 
   <%# 日付 %>
       <div class="weight-bold-text">
         日にち
       </div>
-      <div class = "posted-date" >
-        <%=  @diary.start_time %>
-      </div>
+      <%= form.date_field :start_time , class: "posted_date" %>
 
   <%# 嬉しかったこと %>
       <div class="happy-content">
         <div class="weight-bold-text">
           嬉しかったこと、良かったこと, 自分を褒めてあげたいこと
         </div>
-          <div class="happy-show-text">
-            <%= @diary.happy%>
-          </div>
+        <%= form.text_field :happy , class: "text", placeholder: "今日あった出来事で最低１つ、ポジティブな事を記入してね"%>
       </div>
   <%#/ 嬉しかったこと %>
 
@@ -29,8 +26,7 @@
         <div class="weight-bold-text">
           日記
         </div>
-        <div class="diary-show-text">
-        <%= @diary.diary %>
+        <%= form.text_area :diary , class: "text", placeholder: "今日の出来事"%>
       </div>
   <%#/ 日記 %>
     <%# 写真 %>
@@ -38,20 +34,18 @@
         <div class="weight-bold-text">
           写真
         </div>
+        <%= image_tag @diary.image, class: "diary-image" if @diary.image.attached? %>
         <div class="click-upload" >
-          <%= image_tag @diary.image, class: "diary-image" if @diary.image.attached? %>
+          <%= form.file_field :image, class: "picture" %>
         </div>
       </div>
     <%# /写真 %>
-      <div class ="btn-list">
-        <% if current_user.id == @diary.user_id %>
-          <%= link_to "編集", edit_diary_path, method: :get, class: "diary-edit-destroy" %>
-          <p class="or-text">or</p>
-          <%= link_to "削除",diary_path, method: :delete, class:"diary-edit-destroy" %>
-        <% end %>
+
+      <div class="sell-btn-contents">
+        <%= form.submit "更新する" ,class:"sell-btn" %>
       </div>
     </div>
   </div>
-</div>
+  <% end %>
 
   <%= render "shared/fotter" %>
