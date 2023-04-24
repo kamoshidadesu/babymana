@@ -1,0 +1,55 @@
+<div class="diary-show-contents">
+  <%= render "shared/header" %>
+
+  <div class="diary-main">
+    <div class="diary-main-top">
+      <h2 class="diary-title">★成長日記★</h2>
+
+  <%# 日付 %>
+      <div class="weight-bold-text">
+        日にち
+      </div>
+      <div class = "posted-date" >
+        <%=  @diary.start_time %>
+      </div>
+
+  <%# 嬉しかったこと %>
+      <div class="happy-content">
+        <div class="weight-bold-text">
+          嬉しかったこと、良かったこと, 自分を褒めてあげたいこと
+        </div>
+          <div class="happy-show-text">
+            <%= @diary.happy%>
+          </div>
+      </div>
+  <%#/ 嬉しかったこと %>
+
+  <%# 日記 %>
+      <div class="diary-content">
+        <div class="weight-bold-text">
+          日記
+        </div>
+        <div class="diary-show-text">
+        <%= @diary.diary %>
+      </div>
+  <%#/ 日記 %>
+    <%# 写真 %>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          写真
+        </div>
+        <div class="click-upload" >
+          <%= image_tag @diary.image, class: "diary-image" if @diary.image.attached? %>
+        </div>
+      </div>
+    <%# /写真 %>
+      <div class ="btn-list">
+        <%= link_to "編集", edit_diary_path, method: :get, class: "diary-edit-destroy" %>
+        <p class="or-text">or</p>
+        <%= link_to "削除",diary_path, method: :delete, class:"diary-edit-destroy" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <%= render "shared/fotter" %>

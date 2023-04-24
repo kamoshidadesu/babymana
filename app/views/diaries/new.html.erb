@@ -10,7 +10,7 @@
       <div class="weight-bold-text">
         日にち
       </div>
-      <%= form.datetime_select :start_time , class: "posted_date" %>
+      <%= form.date_field :start_time , class: "posted_date" %>
 
   <%# 嬉しかったこと %>
       <div class="happy-content">
@@ -50,9 +50,11 @@
   <%= month_calendar events: @diaries do |date, diaries| %>
       <%= date.day %>
       <% diaries.each do |diary| %>
+        
         <div>
-          <%= diary.happy %>
+          <%= link_to image_tag("diary_mark.png", class:"diary-mark-icon"), diary_path(diary.id), method: :get %>
         </div>
+        
       <% end %>
 	<% end %>
   </div>
