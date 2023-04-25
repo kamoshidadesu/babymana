@@ -1,4 +1,4 @@
-.daiary-main{
+.diary-main{
   height: 50%;
   width: 50%;
   margin-left: 350px;
@@ -12,9 +12,10 @@
 }
 
 
-.daiary-title{
-  color: blue;
-  background-color: blueviolet;
+.diary-title{
+  color: rgb(69, 69, 243);
+  background-color: yellow;
+  text-align: center;
 }
 
 .weight-bold-text{
@@ -33,4 +34,12 @@
 
 .picture{
   margin-bottom: 50px;
+}
+
+.diary-text{
+  color: blue;
+}
+
+.diary-mark-icon{
+  width: 3vw;
 }

@@ -7,9 +7,9 @@
   <div class='nav'>
     <ul class='lists-left'>
       <%= image_tag "calendar.png", class:"list-left-icon" %>
-      <li><%= link_to 'カレンダー', "#", class: "calendars-list" %></li>
+      <li><%= link_to 'カレンダー', "/", class: "calendars-list" %></li>
       <%= image_tag "diary.png", class:"list-left-icon" %>
-      <li><%= link_to '日記', "#", class: "diaries-list" %></li>
+      <li><%= link_to '日記', new_diary_path, class: "diaries-list" %></li>
       <%= image_tag "management.png", class:"list-left-icon" %>
       <li><%= link_to '記録', "#", class: "managements-list" %></li>
     </ul>

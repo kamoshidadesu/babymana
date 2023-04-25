@@ -1,0 +1,48 @@
+.diary-image{
+  height: 50vh;
+  width: 45vw;
+  min-height: 500px;
+  background-color: rgb(243, 238, 238);
+  object-fit: contain;
+}
+
+.posted-date{
+  border: solid 1px black;
+  background-color: white;
+  border-radius: 5px;
+  width: 15vw;
+}
+
+.happy-show-text{
+  border: solid 1px black;
+  background-color: white;
+  border-radius: 5px;
+  height: 5VH;
+}
+
+.diary-show-text{
+  border: solid 1px black;
+  background-color: white;
+  border-radius: 5px;
+  height: 20vh;
+}
+
+.btn-list{
+display: flex;
+text-align: center;
+justify-content: center;
+}
+
+.diary-image{
+  border-radius: 5px;
+}
+
+.diary-edit-destroy{
+  border: solid 1px white ;
+  width: 3vw;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: orange;
+  color: black;
+}

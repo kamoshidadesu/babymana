@@ -1,0 +1,64 @@
+<div class="diary-contents">
+  <%= render "shared/header" %>
+
+  <div class="diary-main">
+    <div class="diary-main-top">
+      <h2 class="diary-title">★成長日記★</h2>
+      <%= form_with(model: @diary, local: true) do |form| %>
+
+  <%# 日付 %>
+      <div class="weight-bold-text">
+        日にち
+      </div>
+      <%= form.date_field :start_time, class: "posted_date" %>
+
+  <%# 嬉しかったこと %>
+      <div class="happy-content">
+        <div class="weight-bold-text">
+          嬉しかったこと、良かったこと, 自分を褒めてあげたいこと
+        </div>
+        <%= form.text_field :happy , class: "text", placeholder: "今日あった出来事で最低１つ、ポジティブな事を記入してね"%>
+      </div>
+  <%#/ 嬉しかったこと %>
+
+  <%# 日記 %>
+      <div class="diary-content">
+        <div class="weight-bold-text">
+          日記
+        </div>
+        <%= form.text_area :diary , class: "text", placeholder: "今日の出来事"%>
+      </div>
+  <%#/ 日記 %>
+    <%# 写真 %>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          写真
+        </div>
+        <div class="click-upload" >
+          <%= form.file_field :image, class: "picture" %>
+        </div>
+      </div>
+    <%# /写真 %>
+
+      <div class="sell-btn-contents">
+          <%= form.submit "保存する" ,class:"sell-btn" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  
+  <%= month_calendar events: @diaries do |date, diaries| %>
+      <%= date.day %>    
+          <% diaries.each do |diary| %>
+          <% if diary.user_id == current_user.id %> 
+            <div>
+              <%= link_to image_tag("diary_mark.png", class:"diary-mark-icon"), diary_path(diary.id), method: :get %>
+            </div>
+            <% else date.day%>
+        <% end %>
+      <% end %>
+	<% end %>
+  </div>
+</div>
+
+<%= render "shared/fotter" %>
