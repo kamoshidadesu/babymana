@@ -44,11 +44,11 @@
       </div>
     <%# /写真 %>
       <div class ="btn-list">
-        <% if current_user.id == @diary.user_id %>
+        
           <%= link_to "編集", edit_diary_path, method: :get, class: "diary-edit-destroy" %>
           <p class="or-text">or</p>
-          <%= link_to "削除",diary_path, method: :delete, class:"diary-edit-destroy" %>
-        <% end %>
+          <%= link_to "削除", diary_path(@diary.id), method: :delete, class: "diary-edit-destroy" %>
+        
       </div>
     </div>
   </div>
