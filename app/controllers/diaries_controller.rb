@@ -1,4 +1,9 @@
 class DiariesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_diary, only: [:show, :edit, :update, :destroy]
+
+  def index
+  end
 
   def new
     @diaries = Diary.all
@@ -15,19 +20,20 @@ class DiariesController < ApplicationController
   end
 
   def show
-    @diary = Diary.find(params[:id])
+    if @diary.user_id == current_user.id 
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
-    @diary = Diary.find(params[:id])
-      if current_user.id == @diary.user_id 
+    if @diary.user_id == current_user.id 
       else
       redirect_to root_path
     end
   end
 
   def update
-    @diary = Diary.find(params[:id])
     if @diary.update(diary_params)
       redirect_to diary_path(@diary.id), method: :get
     else
@@ -36,11 +42,13 @@ class DiariesController < ApplicationController
   end
 
   def destroy
-    @diary = Diary.find(params[:id])
+    if @diary.user_id == current_user.id 
       @diary.destroy
       redirect_to new_diary_path
+    else
+      render item_path(@diary.id), method: :get
   end
-
+end
 
   private
 
@@ -48,6 +56,9 @@ class DiariesController < ApplicationController
     params.require(:diary).permit(:image, :happy, :diary, :start_time).merge(user_id: current_user.id)
   end
 
+  def set_diary
+    @diary = Diary.find(params[:id])
+  end
 
 end
 

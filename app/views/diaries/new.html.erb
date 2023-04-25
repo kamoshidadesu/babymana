@@ -10,7 +10,7 @@
       <div class="weight-bold-text">
         日にち
       </div>
-      <%= form.date_field :start_time , class: "posted_date" %>
+      <%= form.date_field :start_time, class: "posted_date" %>
 
   <%# 嬉しかったこと %>
       <div class="happy-content">
@@ -41,20 +41,21 @@
     <%# /写真 %>
 
       <div class="sell-btn-contents">
-        <%= form.submit "保存する" ,class:"sell-btn" %>
+          <%= form.submit "保存する" ,class:"sell-btn" %>
       </div>
     </div>
   </div>
   <% end %>
-
+  
   <%= month_calendar events: @diaries do |date, diaries| %>
-      <%= date.day %>
-      <% diaries.each do |diary| %>
-        
-        <div>
-          <%= link_to image_tag("diary_mark.png", class:"diary-mark-icon"), diary_path(diary.id), method: :get %>
-        </div>
-        
+      <%= date.day %>    
+          <% diaries.each do |diary| %>
+          <% if diary.user_id == current_user.id %> 
+            <div>
+              <%= link_to image_tag("diary_mark.png", class:"diary-mark-icon"), diary_path(diary.id), method: :get %>
+            </div>
+            <% else date.day%>
+        <% end %>
       <% end %>
 	<% end %>
   </div>
