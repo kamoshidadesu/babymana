@@ -11,13 +11,13 @@
     <div class="time">
       <%= image_tag "clock.png", class:"clock-icon" %>
       <%= form.label "日時(開始)" %>
-      <%= form.datetime_select :start_time %>
+      <%= form.datetime_select :start_time,{ :minute_step => 30} %>
     </div>
 
     <div class="time">
       <%= image_tag "clock.png", class:"clock-icon" %>
       <%= form.label "日時(終了)" %>
-      <%= form.datetime_select :end_time %>
+      <%= form.datetime_select :end_time,{ :minute_step => 30} %>
     </div>
 
     <div class="content">
@@ -28,7 +28,8 @@
 
 
     <div class="submit">
-      <%= form.submit "保存" %>
+      <%= form.submit "保存する" %>
     </div>
   </div>
   <% end %>
+

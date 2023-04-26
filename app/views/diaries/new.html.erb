@@ -48,7 +48,7 @@
   <% end %>
   
   <%= month_calendar events: @diaries do |date, diaries| %>
-      <%= date.day %>    
+      <%= date.day %>
           <% diaries.each do |diary| %>
           <% if diary.user_id == current_user.id %> 
             <div>
