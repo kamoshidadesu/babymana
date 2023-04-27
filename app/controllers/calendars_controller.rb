@@ -1,4 +1,7 @@
 class CalendarsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_calendar, only: [:show, :edit, :update, :destroy]
+  
   def index
     @calendars = Calendar.all
   end
@@ -18,7 +21,6 @@ class CalendarsController < ApplicationController
   end
 
   def show
-    @calendar = Calendar.find(params[:id])
     @calendars = Calendar.all.group_by { |calendar| calendar.start_time.to_date }
     if @calendar.user_id == current_user.id
       else
@@ -27,7 +29,6 @@ class CalendarsController < ApplicationController
   end
   
   def edit
-    @calendar = Calendar.find(params[:id])
     if @calendar.user_id == current_user.id
     else
       redirect_to root_path
@@ -35,7 +36,6 @@ class CalendarsController < ApplicationController
   end
 
   def update
-    @calendar = Calendar.find(params[:id])
     if @calendar.update(calendar_params)
       redirect_to calendar_path(@calendar.id), method: :get
     else
@@ -44,7 +44,6 @@ class CalendarsController < ApplicationController
   end
 
   def destroy
-    @calendar = Calendar.find(params[:id])
     if @calendar.user_id == current_user.id
       @calendar.destroy
       redirect_to root_path
@@ -59,5 +58,10 @@ end
   def calendar_params
     params.require(:calendar).permit(:start_time, :end_time, :schedule, :content).merge(user_id: current_user.id)
   end
+
+  def set_calendar
+    @calendar = Calendar.find(params[:id])
+  end
+
 
 end
