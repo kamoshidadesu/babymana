@@ -20,9 +20,27 @@ class CalendarsController < ApplicationController
   def show
     @calendar = Calendar.find(params[:id])
     @calendars = Calendar.all.group_by { |calendar| calendar.start_time.to_date }
+    if @calendar.user_id == current_user.id
+      else
+        redirect_to root_path
+      end
   end
   
   def edit
+    @calendar = Calendar.find(params[:id])
+    if @calendar.user_id == current_user.id
+    else
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @calendar = Calendar.find(params[:id])
+    if @calendar.update(calendar_params)
+      redirect_to calendar_path(@calendar.id), method: :get
+    else
+      render :edit
+    end
   end
 
   private
