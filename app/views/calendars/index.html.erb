@@ -4,11 +4,11 @@
   <%= link_to date.day, new_calendar_path, class:"schedule-icon" %>
     <% calendars.each do |calendar| %>
       <% if calendar.user_id == current_user.id %> 
-        <div>
-          <%= calendar.start_time.strftime("%H:%M ~")%>
-          <%= calendar.end_time.strftime("%H:%M")%>
-        </div>
         <%= link_to calendar.schedule, calendar_path(calendar.id), method: :get %>
+        <div>
+          <%= calendar.start_time.strftime("(%H:%M ~")%>
+          <%= calendar.end_time.strftime("%H:%M)")%>
+        </div>
         <% else date.day %>
       <% end %>
     <% end %>

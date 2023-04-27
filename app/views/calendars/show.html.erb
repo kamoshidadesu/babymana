@@ -1,2 +1,32 @@
 <%= render "shared/header" %>
-<%= render "shared/fotter" %>
+<div class="calendar-show">
+  <div class = "calendar-show-main">
+    <div class= "table">
+      <div class="calendar-show-titles">
+        <div class="calendar-show-title">時間</div>
+        <div class="calendar-show-title">予定</div>
+        <div class="calendar-show-title">内容</div>
+      </div>
+    
+      <ul class ="calendar-date-data">
+        <% @calendars.each do |date, calendars|%>
+        <li><%= date%></li>
+      </ul>
+
+      <ul class = "calendar-show-contents">
+        <% calendars.sort_by(&:start_time).each do |calendar|%>
+          <li class ="calendar-show-time">
+            <%= calendar.start_time.strftime("%H:%M")%>~<%= calendar.end_time.strftime("%H:%M")%>
+          </li> 
+          <li class ="calendar-schedule-lists">
+            <%= calendar.schedule %>
+          </li>
+          <li class ="calendar-content-lists">
+            <%= calendar.content%>
+          </li>
+        <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

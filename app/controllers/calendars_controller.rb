@@ -16,6 +16,11 @@ class CalendarsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @calendar = Calendar.find(params[:id])
+    @calendars = Calendar.all.group_by { |calendar| calendar.start_time.to_date }
+  end
   
   def edit
   end

@@ -1,0 +1,41 @@
+.calendar-show-main{
+  display: flex;
+  justify-content: center;
+}
+
+.table{
+border: solid 1px black;
+border-collapse: collapse;
+
+}
+
+.calendar-show-titles{
+  border: solid 1px black;
+  border-collapse: collapse ;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+.calendar-date-data{
+  list-style: none;
+}
+
+.calendar-show-contents{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.calendar-show-time{
+  
+}
+
+.calendar-schedule-lists{
+  
+  
+  }
+
+.calendar-content-lists{
+  
+}
