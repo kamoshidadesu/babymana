@@ -4,38 +4,29 @@
 }
 
 .table{
-border: solid 1px black;
+border: solid 3px black;
 border-collapse: collapse;
 
 }
 
-.calendar-show-titles{
+.calendar-show-title{
   border: solid 1px black;
   border-collapse: collapse ;
-  display: flex;
   justify-content: space-around;
+  padding-right: 200px;
   
 }
 
-.calendar-date-data{
-  list-style: none;
+.calendar-show-date{
+  color: red;
+  padding-top: 30px;
+  border: solid 1px black;
 }
 
-.calendar-show-contents{
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
+.calendar-show-content{
+  border: solid 1px black;
 }
 
-.calendar-show-time{
-  
-}
-
-.calendar-schedule-lists{
-  
-  
-  }
-
-.calendar-content-lists{
-  
+.calendar-edit-btn{
+  text-decoration: none;
 }
