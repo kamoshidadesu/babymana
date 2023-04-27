@@ -1,7 +1,17 @@
 <%= render "shared/header" %>
 
-<%= month_calendar do |date| %>
-  <%= date.day %>
+<%= month_calendar events: @calendars do |date, calendars| %>
+  <%= link_to date.day, new_calendar_path, class:"schedule-icon" %>
+    <% calendars.sort_by(&:start_time).each do |calendar| %>
+      <% if calendar.user_id == current_user.id %> 
+        <%= link_to calendar.schedule, calendar_path(calendar.id), method: :get %>
+        <div>
+          <%= calendar.start_time.strftime("(%H:%M ~")%>
+          <%= calendar.end_time.strftime("%H:%M)")%>
+        </div>
+        <% else date.day %>
+      <% end %>
+    <% end %>
 <% end %>
 
 <%= render "shared/fotter" %>

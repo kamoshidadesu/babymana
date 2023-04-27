@@ -1,0 +1,32 @@
+.calendar-show-top{
+  text-align: center;
+
+}
+.calendar-show-main{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.calendar-show-title{
+  border: solid 1px black;
+  border-collapse: collapse ;
+  justify-content: space-around;
+  padding-right: 200px;
+  
+}
+
+.calendar-show-date{
+  color: red;
+  padding-top: 30px;
+  border: solid 1px black;
+}
+
+.calendar-show-content{
+  border: solid 1px black;
+}
+
+.calendar-show-btn{
+  text-decoration: none;
+  color: blue;
+}

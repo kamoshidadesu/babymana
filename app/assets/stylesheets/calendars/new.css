@@ -4,7 +4,7 @@
 }
 
 .schedule-list{
-  flex-direction: column;
+  display: block;
   padding-top: 50px;
 }
 
