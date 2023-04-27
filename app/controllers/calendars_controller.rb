@@ -43,6 +43,17 @@ class CalendarsController < ApplicationController
     end
   end
 
+  def destroy
+    @calendar = Calendar.find(params[:id])
+    if @calendar.user_id == current_user.id
+      @calendar.destroy
+      redirect_to root_path
+    else
+      render calendar_path(@calendar.id), method: :get
+  end
+end
+
+
   private
 
   def calendar_params

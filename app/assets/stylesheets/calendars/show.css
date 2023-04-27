@@ -1,6 +1,6 @@
 .calendar-show-top{
   text-align: center;
-  
+
 }
 .calendar-show-main{
   display: flex;
@@ -26,6 +26,7 @@
   border: solid 1px black;
 }
 
-.calendar-edit-btn{
+.calendar-show-btn{
   text-decoration: none;
+  color: blue;
 }
