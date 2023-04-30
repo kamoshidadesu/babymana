@@ -1,13 +1,13 @@
 class CalendarsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_calendar, only: [:show, :edit, :update, :destroy]
+
   
   def index
-    @calendars = Calendar.all
+    @calendars = Calendar.all 
   end
 
   def new
-    
     @calendar = Calendar.new
   end
 
@@ -60,8 +60,7 @@ end
   end
 
   def set_calendar
-    @calendar = Calendar.find(params[:id])
+    @calendar = current_user.management.calendars.find(params[:id])
   end
-
 
 end
