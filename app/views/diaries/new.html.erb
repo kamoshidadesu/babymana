@@ -52,7 +52,7 @@
           <% diaries.each do |diary| %>
           <% if diary.user_id == current_user.id %> 
             <div>
-              <%= link_to image_tag("diary_mark.png", class:"diary-mark-icon"), diary_path(diary.id), method: :get %>
+              <%= link_to image_tag("diary.png", class:"diary-mark-icon"), diary_path(diary.id), method: :get %>
             </div>
             <% else date.day%>
         <% end %>

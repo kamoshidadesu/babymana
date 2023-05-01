@@ -1,5 +1,5 @@
 class ManagementsController < ApplicationController
-  
+  before_action :set_management, onry: [:show, :edit, :update, :destroy]
 
   def new
     @managements = Management.all
@@ -17,7 +17,6 @@ class ManagementsController < ApplicationController
   end
 
   def show
-    @management = Management.find(params[:id])
     @managements = Management.all.group_by { |management| management.start_time.to_date }
     if @management.user_id == current_user.id 
     else
@@ -25,6 +24,20 @@ class ManagementsController < ApplicationController
     end
   end
 
+  def edit
+    if @management.user_id == current_user.id
+    else
+      redirect_to root_path
+    end
+  end
+
+  def update
+    if @management.update(management_params)
+      redirect_to management_path(@management.id), method: :get
+    else
+      render :edit
+    end
+  end
 
   private
 
@@ -32,5 +45,8 @@ class ManagementsController < ApplicationController
   params.require(:management).permit(:start_time, :record_id, :note).merge(user_id: current_user.id)
   end
 
+  def set_management
+    @management = Management.find(params[:id])
+  end
 
 end
