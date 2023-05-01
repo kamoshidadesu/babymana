@@ -1,5 +1,5 @@
 class ManagementsController < ApplicationController
-  before_action :set_management, onry: [:show, :edit, :update, :destroy]
+  before_action :set_management, only: [:show, :edit, :update, :destroy]
 
   def new
     @managements = Management.all
@@ -38,6 +38,15 @@ class ManagementsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    if @management.user_id == current_user.id
+      @management.destroy
+      redirect_to root_path
+    else
+      render management_path(@management.id), method: :get
+  end
+end
 
   private
 
