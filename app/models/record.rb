@@ -12,11 +12,5 @@ class Record < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :managements
+  belongs_to :managements
 end
-
-
-
-
-
-s

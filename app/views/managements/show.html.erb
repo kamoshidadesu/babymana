@@ -1,0 +1,33 @@
+<%= render "shared/header" %>
+<div class="calendar-show">
+  <h1 class="calendar-show-top">予定一覧</h1>
+  <div class = "calendar-show-main">
+    <table class= "table">
+      <thead>
+        <tr class = "show-titles" >
+          <th class="calendar-show-title">時間</th>
+          <th class="calendar-show-title">予定</th>
+          <th class="calendar-show-title">内容</th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <% @managements.each do |date, managements|%>
+            <tr>
+              <td class="calendar-show-date"><%= date %></td>
+            </tr>
+
+            <% managements.sort_by(&:start_time).each do |management|%>
+              <tr>
+                <td class="calendar-show-content"><%= management.start_time.strftime("%H:%M") %><%= link_to "（変更する）", edit_management_path, method: :get, class: "calendar-show-btn" %><%= link_to "(削除)", management_path(@management.id), method: :delete, class: "calendar-show-btn" %></td>
+                <td class="calendar-show-content"><%= management.record.image_path %></td>
+                <td class="calendar-show-content"><%= management.note%></td>
+              </tr>
+            <% end %>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= render "shared/fotter" %>

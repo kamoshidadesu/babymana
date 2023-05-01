@@ -16,6 +16,16 @@ class ManagementsController < ApplicationController
     end
   end
 
+  def show
+    @management = Management.find(params[:id])
+    @managements = Management.all.group_by { |management| management.start_time.to_date }
+    if @management.user_id == current_user.id 
+    else
+      redirect_to root_path
+    end
+  end
+
+
   private
 
   def management_params

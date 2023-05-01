@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2023_04_30_025425) do
     t.datetime "start_time", null: false
     t.datetime "end_time", null: false
     t.string "schedule", null: false
+    t.string "content"
     t.bigint "user_id", null: false
     t.bigint "management_id"
     t.datetime "created_at", precision: 6, null: false

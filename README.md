@@ -47,6 +47,7 @@ Things you may want to cover:
 | start_time         | datetime   | null: false                    |
 | end_time           | datetime   | null: false                    |
 | schedule           | string     | null: false                    |
+| content            | string     |                                |
 | user               | references | null: false, foreign_key :true |
 
 ### Association

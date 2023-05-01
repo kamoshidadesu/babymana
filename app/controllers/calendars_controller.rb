@@ -56,11 +56,11 @@ end
   private
 
   def calendar_params
-    params.require(:calendar).permit(:start_time, :end_time, :schedule, :content).merge(user_id: current_user.id)
+    params.require(:calendar).permit(:start_time, :end_time, :schedule, :content).merge(user_id: current_user.id, management_id: params[:management_id])
   end
 
   def set_calendar
-    @calendar = current_user.management.calendars.find(params[:id])
+    @calendar = current_user.calendars.find(params[:id])
   end
 
 end
