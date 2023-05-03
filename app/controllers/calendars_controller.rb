@@ -21,6 +21,7 @@ class CalendarsController < ApplicationController
   end
 
   def show
+    
     @calendars = Calendar.all.group_by { |calendar| calendar.start_time.to_date }
     if @calendar.user_id == current_user.id
       else

@@ -1,14 +1,12 @@
 .diary-main{
   height: 50%;
-  width: 50%;
-  margin-left: 350px;
+  width: 100%;
   padding-bottom: 50px;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  background-color: aquamarine;
+  background-color: cornflowerblue;
 }
 
 
