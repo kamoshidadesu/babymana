@@ -6,10 +6,10 @@
       <div class = "schedule-list">
         <div class="title" >
           <%= image_tag "calendar.png", class:"calendar-icon"  %>
-          <%= form.label "記録"  %>
+          <%= form.label "記録" %>
           <%= form.collection_select(:record_id, Record.all, :id, :name, {}, class: "record-icon") do |record| %>
-          <%= options_for_select([[record.name, record.id]], @management.record_id) %>
-          <%= image_tag("#{record.image_path}.png", class: "record-icon-lists") %>
+            <%= form.options_for_select([[record.name, record.id]], @management.record_id) %>
+            <%= form.image_tag("#{record.image_path}.png", class: "record-icon-lists") %>
   <% end %>
         </div>
 
@@ -38,7 +38,11 @@
           <% managements.each do |management| %>
           <% if management.user_id == current_user.id %> 
             <div>
-              <%= link_to image_tag("diary_mark.png", class:"diary-mark-icon"), management_path(management.id), method: :get %>
+              <% if management.record_id.in?([4, 9]) %>
+                <%= link_to management.record.name, management_path(management.id), method: :get %>
+              <% else %>
+                <%= link_to image_tag("diary_mark.png", class:"diary-mark-icon"), management_path(management.id), method: :get %>
+              <% end %>
             </div>
             <% else date.day%>
           <% end %>
