@@ -9,15 +9,18 @@
 }
 
 .calendar-icon{
-  width: 5vh;
+  width: 4.5vh;
+  padding-top: 15px;
 }
 
 .clock-icon{
-  width: 5vh;
+  width: 4.5vh;
+  padding-top: 15px;
 }
 
 .content-icon{
-  width: 5vh;
+  width: 4.5vh;
+  padding-top: 15px;
   margin-bottom: 20px;
 }
 
@@ -25,4 +28,10 @@
 .calendar-heading{
   text-align: center;
   padding: 10px;
+}
+
+.submit{
+  padding-top: 15px;
+  text-align: center;
+
 }

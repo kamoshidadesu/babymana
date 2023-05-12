@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_25_142645) do
+ActiveRecord::Schema.define(version: 2023_04_30_025425) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -39,8 +39,10 @@ ActiveRecord::Schema.define(version: 2023_04_25_142645) do
     t.string "schedule", null: false
     t.string "content"
     t.bigint "user_id", null: false
+    t.bigint "management_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["management_id"], name: "index_calendars_on_management_id"
     t.index ["user_id"], name: "index_calendars_on_user_id"
   end
 
@@ -52,6 +54,16 @@ ActiveRecord::Schema.define(version: 2023_04_25_142645) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_diaries_on_user_id"
+  end
+
+  create_table "managements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "start_time", null: false
+    t.integer "record_id", null: false
+    t.string "note"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_managements_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,6 +81,8 @@ ActiveRecord::Schema.define(version: 2023_04_25_142645) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "calendars", "managements"
   add_foreign_key "calendars", "users"
   add_foreign_key "diaries", "users"
+  add_foreign_key "managements", "users"
 end

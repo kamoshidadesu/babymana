@@ -1,13 +1,13 @@
 class CalendarsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_calendar, only: [:show, :edit, :update, :destroy]
+
   
   def index
-    @calendars = Calendar.all
+    @calendars = Calendar.all 
   end
 
   def new
-    
     @calendar = Calendar.new
   end
 
@@ -21,6 +21,7 @@ class CalendarsController < ApplicationController
   end
 
   def show
+    
     @calendars = Calendar.all.group_by { |calendar| calendar.start_time.to_date }
     if @calendar.user_id == current_user.id
       else
@@ -56,12 +57,11 @@ end
   private
 
   def calendar_params
-    params.require(:calendar).permit(:start_time, :end_time, :schedule, :content).merge(user_id: current_user.id)
+    params.require(:calendar).permit(:start_time, :end_time, :schedule, :content).merge(user_id: current_user.id, management_id: params[:management_id])
   end
 
   def set_calendar
-    @calendar = Calendar.find(params[:id])
+    @calendar = current_user.calendars.find(params[:id])
   end
-
 
 end

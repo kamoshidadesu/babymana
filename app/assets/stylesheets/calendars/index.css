@@ -1,4 +1,17 @@
+.index-top-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .schedule-icon{
 text-decoration: none;
 color: black;
+}
+
+.kid-image{
+width: 120vw;
+height: 60vh;
+line-height: 0;
+object-fit: cover;
 }

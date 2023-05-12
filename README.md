@@ -47,6 +47,7 @@ Things you may want to cover:
 | start_time         | datetime   | null: false                    |
 | end_time           | datetime   | null: false                    |
 | schedule           | string     | null: false                    |
+| content            | string     |                                |
 | user               | references | null: false, foreign_key :true |
 
 ### Association
@@ -70,12 +71,9 @@ Things you may want to cover:
 
 | Column             | Type       | Option                         |
 | ------------------ | ---------- | ------------------------------ |
-| year_id            | integer    | null: false                    |
-| month_id           | integer    | null: false                    |
-| day_id             | integer    | null: false                    |
-| hour_id            | integer    | null: false                    |
-| minutes_id         | integer    | null: false                    |
-| record_id          | string     | null: false                    |
+| start_time         | datetime   | null: false                    |
+| record_id          | integer    | null:false                    |
+| note               | string     |                                |
 | user               | references | null: false, foreign_key :true |
 
 ### Association
