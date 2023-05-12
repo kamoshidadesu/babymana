@@ -1,16 +1,18 @@
 class ManagementsController < ApplicationController
-  before_action :set_management, only: [:show, :edit, :update, :destroy]
+  before_action :set_management, only: [ :show, :edit, :update, :destroy]
 
   def new
     @managements = Management.all
     @management = Management.new
+    
   end
   
 
   def create
     @management = Management.new(management_params)
     if @management.save
-      redirect_to root_path
+      @managements = Management.all
+      redirect_to new_management_path
     else
       render :new
     end
@@ -44,7 +46,7 @@ class ManagementsController < ApplicationController
       @management.destroy
       redirect_to root_path
     else
-      render management_path(@management.id), method: :get
+      render 'show', id: @management.id
   end
 end
 

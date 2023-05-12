@@ -34,18 +34,11 @@
   <% end %>
 
   <%= month_calendar events: @managements do |date, managements| %>
-      <%= date.day %>
-          <% managements.each do |management| %>
-          <% if management.user_id == current_user.id %> 
-            <div>
-              <% if management.record_id.in?([4, 9]) %>
-                <%= link_to management.record.name, management_path(management.id), method: :get %>
-              <% else %>
-                <%= link_to image_tag("diary_mark.png", class:"diary-mark-icon"), management_path(management.id), method: :get %>
-              <% end %>
-            </div>
-            <% else date.day%>
-          <% end %>
-          <% end %>
-      <% end%>
+  <%= date.day %>
+  <% if managements.any? {|management| management.user_id == current_user.id} %>
+      <div>
+          <%= link_to image_tag("diary_mark.png", class:"diary-mark-icon"), management_path(id: managements.first.id), method: :get %>
+      </div>
+    <% end %>
+  <% end %>
       <%= render "shared/fotter" %>
