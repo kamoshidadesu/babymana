@@ -17,7 +17,7 @@ development:
   <<: *default
   adapter: mysql2
   username: root
-  password:
+  password: babymana3127
   host: localhost
   database: babymana_development
 
@@ -28,7 +28,7 @@ test:
   <<: *default
   adapter: mysql2
   username: root
-  password:
+  password: babymana3127
   host: localhost
   database: babymana_test
 
