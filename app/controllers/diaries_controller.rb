@@ -9,7 +9,7 @@ class DiariesController < ApplicationController
     @diaries = Diary.all
     @diary = Diary.new
   end
-  
+
   def create
     @diary = Diary.new(diary_params)
     if @diary.save
@@ -20,15 +20,15 @@ class DiariesController < ApplicationController
   end
 
   def show
-    if @diary.user_id == current_user.id 
+    if @diary.user_id == current_user.id
     else
       redirect_to root_path
     end
   end
 
   def edit
-    if @diary.user_id == current_user.id 
-      else
+    if @diary.user_id == current_user.id
+    else
       redirect_to root_path
     end
   end
@@ -42,13 +42,13 @@ class DiariesController < ApplicationController
   end
 
   def destroy
-    if @diary.user_id == current_user.id 
+    if @diary.user_id == current_user.id
       @diary.destroy
       redirect_to new_diary_path
     else
       render item_path(@diary.id), method: :get
+    end
   end
-end
 
   private
 
@@ -59,7 +59,4 @@ end
   def set_diary
     @diary = Diary.find(params[:id])
   end
-
 end
-
-
