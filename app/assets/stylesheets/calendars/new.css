@@ -1,37 +1,36 @@
-.schedule{
+.calendar-new-main{
+  height: 50%;
+  width: 100%;
+  padding-bottom: 50px;
+  border-radius: 5px;
   display: flex;
+  align-items: center;
   justify-content: center;
+  background-image: url(kid.png);
+  background-repeat: no-repeat;
+  background-color: wheat;
 }
 
-.schedule-list{
-  display: block;
-  padding-top: 50px;
+.calendar-new-main-top{
+  background-color: white;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
+.calendar-new-title{
+  text-align: center;
+}
 .calendar-icon{
-  width: 4.5vh;
-  padding-top: 15px;
+  width: 3vh;
 }
 
 .clock-icon{
-  width: 4.5vh;
-  padding-top: 15px;
+  width: 3vh;
+  padding-top: 10px;
 }
 
 .content-icon{
-  width: 4.5vh;
-  padding-top: 15px;
-  margin-bottom: 20px;
-}
-
-
-.calendar-heading{
-  text-align: center;
-  padding: 10px;
-}
-
-.submit{
-  padding-top: 15px;
-  text-align: center;
-
+  width: 3vh;
+  padding-top: 10px;
 }

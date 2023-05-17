@@ -6,13 +6,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: cornflowerblue;
+  background-image: url(sleep-baby.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: wheat;
 }
 
+.diary-main-top{
+  background-color: white;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
 
 .diary-title{
-  color: rgb(69, 69, 243);
-  background-color: yellow;
   text-align: center;
 }
 
@@ -20,10 +27,16 @@
   font-size: 16px;
   font-weight: bold;
 }
+
 .text{
   width: 100%;
   padding: 16px 16px 8px;
   resize: none;
+}
+
+.music-icon{
+  width: 2vw;
+  padding-top: 10px;
 }
 
 .sell-btn{

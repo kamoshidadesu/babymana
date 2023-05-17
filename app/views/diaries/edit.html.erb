@@ -1,37 +1,37 @@
-<div class="diary-contents">
-  <%= render "shared/header" %>
+<%= render "shared/header" %>
+  <div class="diary-contents">
+    <div class="diary-main">
 
-  <div class="diary-main">
-    <div class="diary-main-top">
-      <h2 class="diary-title">★成長日記★</h2>
-      <%= form_with(model: @diary, local: true) do |form| %>
+      <div class="diary-main-top">
+        <h2 class="diary-title">★成長日記★</h2>
+        <%= form_with(model: @diary, local: true) do |form| %>
 
   <%# 日付 %>
-      <div class="weight-bold-text">
-        日にち
-      </div>
-      <%= form.date_field :start_time , class: "posted_date" %>
+        <div class="weight-bold-text">
+          日にち
+        </div>
+        <%= form.date_field :start_time , class: "posted_date" %>
 
   <%# 嬉しかったこと %>
-      <div class="happy-content">
-        <div class="weight-bold-text">
-          嬉しかったこと、良かったこと, 自分を褒めてあげたいこと
-        </div>
-        <%= form.text_field :happy , class: "text", placeholder: "今日あった出来事で最低１つ、ポジティブな事を記入してね"%>
-      </div>
-  <%#/ 嬉しかったこと %>
-
+        
+          <div class="weight-bold-text">
+            <%= image_tag "music.png", class:"music-icon"%>
+            嬉しかったこと
+          </div>
+          <%= form.text_field :happy , class: "text", placeholder: "今日あったhappyなこと"%>
+  
   <%# 日記 %>
-      <div class="diary-content">
-        <div class="weight-bold-text">
-          日記
-        </div>
-        <%= form.text_area :diary , class: "text", placeholder: "今日の出来事"%>
-      </div>
-  <%#/ 日記 %>
+        
+          <div class="weight-bold-text">
+            <%= image_tag "diary.png", class:"music-icon"%>
+            日記
+          </div>
+          <%= form.text_area :diary , class: "text", placeholder: "今日の出来事"%>
+
     <%# 写真 %>
       <div class="img-upload">
         <div class="weight-bold-text">
+        <%= image_tag "camera.png", class:"music-icon"%>
           写真
         </div>
         <%= image_tag @diary.image, class: "diary-image" if @diary.image.attached? %>
@@ -39,13 +39,12 @@
           <%= form.file_field :image, class: "picture" %>
         </div>
       </div>
-    <%# /写真 %>
 
-      <div class="sell-btn-contents">
-        <%= form.submit "更新する" ,class:"sell-btn" %>
-      </div>
-    </div>
-  </div>
-  <% end %>
+        <div class="sell-btn-contents">
+            <%= form.submit "保存する" ,class:"sell-btn" %>
+        </div>
+        <% end %>
+      </div><%# diary-main-top%>
+    </div><%# diary-main%>
 
   <%= render "shared/fotter" %>

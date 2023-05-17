@@ -1,11 +1,19 @@
+.calendar-show{
+background-color: wheat;
+}
+
 .calendar-show-top{
   text-align: center;
-
 }
+
 .calendar-show-main{
   display: flex;
   justify-content: center;
   padding-bottom: 30px;
+}
+
+.table{
+  background-color: white;
 }
 
 .calendar-show-title{

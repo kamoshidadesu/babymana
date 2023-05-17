@@ -1,39 +1,45 @@
 <%= render "shared/header" %>
+  <div class = "calendar-new-contents">
+    <div class="calendar-new-main">
 
-  <div class = "schedule">
-    <%= form_with(model: @calendar, local: true) do |form| %>
-      <div class = "schedule-list">
-        <div class="title" >
+      <div class = "calendar-new-main-top">
+        <h2 class="calendar-new-title">★予定を入れよう★</h2>
+        <%= form_with(model: @calendar, local: true) do |form| %>
+
+        <%# 予定 %>
+        <div class="weight-bold-text" >
           <%= image_tag "calendar.png", class:"calendar-icon"  %>
-          <%= form.label "予定"  %>
-          <%= form.text_field :schedule, placeholder: 'タイトルを追加'%>
+          予定
         </div>
+        <%= form.text_field :schedule, placeholder: 'タイトルを追加'%>
 
-        <div class="time">
+        <%# 日時(開始) %>
+        <div class="weight-bold-text">
           <%= image_tag "clock.png", class:"clock-icon" %>
-          <%= form.label "日時(開始)" %>
-          <%= form.datetime_select :start_time,{ :minute_step => 30} %>
+          日時(開始)
         </div>
+        <%= form.datetime_select :start_time,{ :minute_step => 30} %>
 
-        <div class="time">
+        <%# 日時(終了) %>
+        <div class="weight-bold-text">
           <%= image_tag "clock.png", class:"clock-icon" %>
-          <%= form.label "日時(終了)" %>
-          <%= form.datetime_select :end_time,{ :minute_step => 30} %>
+          日時(終了)
         </div>
+        <%= form.datetime_select :end_time,{ :minute_step => 30} %>
 
-        <div class="content">
+        <%# 予定内容 %>
+        <div class="weight-bold-text">
           <%= image_tag "content.png", class:"content-icon" %>
-          <%= form.label "内容", class:"content-label" %>
-          <%= form.text_area :content, placeholder: '予定内容' %>
+          内容
         </div>
+        <%= form.text_area :content, placeholder: '予定内容' %>
 
 
-        <div class="submit">
-          <%= form.submit "保存する" %>
+        <div class="sell-btn-contents">
+          <%= form.submit "保存する", class:"sell-btn" %>
         </div>
-      </div>
-    <% end %>
+        <% end %>
+    </div>
   </div>
-  <%= render "shared/fotter" %>
-  
+<%= render "shared/fotter" %>
 
