@@ -1,57 +1,51 @@
-<div class="diary-show-contents">
-  <%= render "shared/header" %>
+<%= render "shared/header" %>
+  <div class="diary-contents">
+    <div class="diary-main">
 
-  <div class="diary-main">
-    <div class="diary-main-top">
-      <h2 class="diary-title">★成長日記★</h2>
+      <div class="diary-main-top">
+        <h2 class="diary-title">★成長日記★</h2>
+        <%= form_with(model: @diary, local: true) do |form| %>
 
   <%# 日付 %>
-      <div class="weight-bold-text">
-        日にち
-      </div>
-      <div class = "posted-date" >
-        <%=  @diary.start_time.strftime("%Y年%m月%d日") %>
-      </div>
+        <div class="weight-bold-text">
+          <%= image_tag "calendar.png", class:"calendar-icon" %> 
+          日にち
+        </div>
+        <%= form.date_field :start_time, class: "posted_date" %>
 
   <%# 嬉しかったこと %>
-      <div class="happy-content">
-        <div class="weight-bold-text">
-          嬉しかったこと、良かったこと, 自分を褒めてあげたいこと
-        </div>
-          <div class="happy-show-text">
-            <%= @diary.happy%>
+        
+          <div class="weight-bold-text">
+            <%= image_tag "music.png", class:"music-icon"%>
+            嬉しかったこと
           </div>
-      </div>
-  <%#/ 嬉しかったこと %>
-
+          <%= form.text_field :happy , class: "text", placeholder: "今日あったhappyなこと"%>
+  
   <%# 日記 %>
-      <div class="diary-content">
-        <div class="weight-bold-text">
-          日記
-        </div>
-        <div class="diary-show-text">
-        <%= @diary.diary %>
-      </div>
-  <%#/ 日記 %>
+        
+          <div class="weight-bold-text">
+            <%= image_tag "diary.png", class:"music-icon"%>
+            日記
+          </div>
+          <%= form.text_area :diary , class: "text", placeholder: "今日の出来事"%>
+
     <%# 写真 %>
       <div class="img-upload">
         <div class="weight-bold-text">
+        <%= image_tag "camera.png", class:"music-icon"%>
           写真
         </div>
         <div class="click-upload" >
           <%= image_tag @diary.image, class: "diary-image" if @diary.image.attached? %>
         </div>
       </div>
-    <%# /写真 %>
+
       <div class ="btn-list">
-        
           <%= link_to "編集", edit_diary_path, method: :get, class: "diary-edit-destroy" %>
           <p class="or-text">or</p>
           <%= link_to "削除", diary_path(@diary.id), method: :delete, class: "diary-edit-destroy" %>
-        
       </div>
+      <% end %>
     </div>
   </div>
-</div>
-
-  <%= render "shared/fotter" %>
+<%= render "shared/fotter" %>

@@ -1,23 +1,9 @@
 .diary-image{
   height: 50vh;
   width: 45vw;
-  min-height: 500px;
+  min-height: 150px;
   background-color: rgb(243, 238, 238);
   object-fit: contain;
-}
-
-.posted-date{
-  border: solid 1px black;
-  background-color: white;
-  border-radius: 5px;
-  width: 15vw;
-}
-
-.happy-show-text{
-  border: solid 1px black;
-  background-color: white;
-  border-radius: 5px;
-  height: 5VH;
 }
 
 .diary-show-text{
@@ -38,11 +24,10 @@ justify-content: center;
 }
 
 .diary-edit-destroy{
-  border: solid 1px white ;
+  border: solid 1px black ;
   width: 3vw;
   margin: 10px;
   text-decoration: none;
   border-radius: 5px;
-  background-color: orange;
-  color: black;
+  color: red;
 }

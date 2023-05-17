@@ -8,38 +8,35 @@
 
   <%# 日付 %>
         <div class="weight-bold-text">
+          <%= image_tag "calendar.png", class:"calendar-icon" %> 
           日にち
         </div>
         <%= form.date_field :start_time, class: "posted_date" %>
 
   <%# 嬉しかったこと %>
-        <div class="happy-content">
+        
           <div class="weight-bold-text">
+            <%= image_tag "music.png", class:"music-icon"%>
             嬉しかったこと
           </div>
-          <%= form.text_field :happy , class: "text", placeholder: "今日あった出来事で最低１つ、ポジティブな事を記入してね"%>
-        </div>
-  <%#/ 嬉しかったこと %>
-
+          <%= form.text_field :happy , class: "text", placeholder: "今日あったhappyなこと"%>
+  
   <%# 日記 %>
-        <div class="diary-content">
+        
           <div class="weight-bold-text">
+            <%= image_tag "diary.png", class:"music-icon"%>
             日記
           </div>
           <%= form.text_area :diary , class: "text", placeholder: "今日の出来事"%>
-        </div>
-  <%#/ 日記 %>
 
     <%# 写真 %>
-        <div class="img-upload">
           <div class="weight-bold-text">
+            <%= image_tag "camera.png", class:"music-icon"%>
             写真
           </div>
           <div class="click-upload" >
             <%= form.file_field :image, class: "picture" %>
           </div>
-        </div> 
-    <%# /写真 %>
 
         <div class="sell-btn-contents">
             <%= form.submit "保存する" ,class:"sell-btn" %>
@@ -62,7 +59,6 @@
         <% end %>
       <% end %>
     </div><%# diary-calendar%>
-  
   </div> <%# diary-contents%>
 
 <%= render "shared/fotter" %>

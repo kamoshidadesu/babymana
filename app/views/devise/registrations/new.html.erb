@@ -4,9 +4,9 @@
 <%= form_with model: @user, url: user_registration_path,  class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
-    <h1 class='form-header-text'>
+    <h2 class='form-header-text'>
       会員情報入力
-    </h1>
+    </h2>
   </div>
 
   <%#= render 'shared/error_messages', model: f.object %>
@@ -61,5 +61,5 @@
   <p class='register-info'>本人情報の登録について</p>
 </div>
 <% end %>
-
+<%= render "shared/fotter" %>
 

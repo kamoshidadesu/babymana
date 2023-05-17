@@ -15,3 +15,7 @@ height: 60vh;
 line-height: 0;
 object-fit: cover;
 }
+
+.calendar-heading{
+  text-align: center;
+}

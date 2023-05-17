@@ -1,17 +1,17 @@
 <%= render "shared/header" %>
-<div class="calendar-show">
-  <h1 class="calendar-show-top">予定一覧</h1>
-  <div class = "calendar-show-main">
-    <table class= "table">
-      <thead>
-        <tr class = "show-titles" >
-          <th class="calendar-show-title">時間</th>
-          <th class="calendar-show-title">予定</th>
-          <th class="calendar-show-title">内容</th>
-        </tr>
-      </thead>
+  <div class="calendar-show">
+    <h1 class="calendar-show-top">予定一覧</h1>
+    <div class = "calendar-show-main">
+      <table class= "table">
+        <thead>
+          <tr class = "show-titles" >
+            <th class="calendar-show-title">時間</th>
+            <th class="calendar-show-title">予定</th>
+            <th class="calendar-show-title">内容</th>
+          </tr>
+        </thead>
 
-      <tbody>
+        <tbody>
           <% @calendars.each do |date, calendars|%>
             <tr>
               <td class="calendar-show-date"><%= date %></td>
@@ -25,7 +25,8 @@
               </tr>
             <% end %>
           <% end %>
-      </tbody>
+        </tbody>
+        
     </table>
   </div>
 </div>
