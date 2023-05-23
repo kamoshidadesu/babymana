@@ -5,6 +5,7 @@
       <div class = "calendar-new-main-top">
         <h2 class="calendar-new-title">★予定を入れよう★</h2>
         <%= form_with(model: @calendar, local: true) do |form| %>
+        <%= render 'layouts/error-messages', model: form.object %>
 
         <%# 予定 %>
         <div class="weight-bold-text" >

@@ -14,5 +14,5 @@ class Record < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  belongs_to :managements
+  has_many :managements
 end
