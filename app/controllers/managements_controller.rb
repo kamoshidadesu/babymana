@@ -12,6 +12,7 @@ class ManagementsController < ApplicationController
       @managements = Management.all
       redirect_to new_management_path
     else
+      @managements = Management.all
       render :new
     end
   end
