@@ -5,7 +5,9 @@
       <div class="management-main-top">
         <h2 class="management-title">★記録簿★</h2>
         <%= form_with(model: @management, local: true) do |form| %>
-    
+        
+        <%= render 'layouts/error-messages', model: form.object %>
+
       <%#  記録 %>
       <div class="weight-bold-text">
         <%= image_tag "diary_mark.png", class:"calendar-icon"  %>
