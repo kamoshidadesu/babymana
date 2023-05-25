@@ -15,6 +15,7 @@ class DiariesController < ApplicationController
     if @diary.save
       redirect_to new_diary_path
     else
+      @diaries = Diary.all
       render :new
     end
   end
