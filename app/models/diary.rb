@@ -4,7 +4,7 @@ class Diary < ApplicationRecord
 
   validates :start_time, presence: true
   validates :happy, presence: true
-  validate :one_event_per_day, on: :create
+  validate :one_event_per_day, on: :create, on: :update
 
   private
 
