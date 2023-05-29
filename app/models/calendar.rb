@@ -5,6 +5,7 @@ class Calendar < ApplicationRecord
   validates :end_time,   presence: true
   validates :schedule,   presence: true
   validate  :start_end_check
+  
 
   private
 
@@ -13,4 +14,5 @@ class Calendar < ApplicationRecord
       if self.start_time > self.end_time
       end
     end
+
 end
