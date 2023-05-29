@@ -11,17 +11,17 @@ class Diary < ApplicationRecord
 
   def one_event_per_day
     if self.class.where(start_time: Time.zone.today.beginning_of_day..Time.zone.today.end_of_day).exists?
-      errors.add(:base, 'You can only create one event per day.')
+      errors.add(:base, '一日一つしか投稿できません')
     elsif start_time.present? && self.class.where(start_time: start_time.beginning_of_day..start_time.end_of_day).exists?
-      errors.add(:start_time, 'You have already created an event for this time.')
+      errors.add(:start_time, '一日一つしか投稿できません')
     end
   end
 
   def one_event_per_day_edit
     if self.class.where(start_time: Time.zone.today.beginning_of_day..Time.zone.today.end_of_day).where.not(id: self.id).exists?
-      errors.add(:base, 'You can only create one event per day.')
+      errors.add(:base, '一日一つしか投稿できません')
     elsif start_time.present? && self.class.where(start_time: start_time.beginning_of_day..start_time.end_of_day).where.not(id: self.id).exists?
-      errors.add(:start_time, 'You have already created an event for this time.')
+      errors.add(:start_time, '一日一つしか投稿できません')
     end
   end
 end
