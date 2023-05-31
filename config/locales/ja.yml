@@ -9,6 +9,8 @@ ja:
         start_time: "日にち"
         happy: "嬉しかったこと"
         diary: "日記"
+      management:
+        record_id: "記録"
       user:
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
