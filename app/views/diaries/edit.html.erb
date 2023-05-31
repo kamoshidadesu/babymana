@@ -5,6 +5,7 @@
       <div class="diary-main-top">
         <h2 class="diary-title">★成長日記★</h2>
         <%= form_with(model: @diary, local: true) do |form| %>
+        <%= render 'layouts/error-messages', model: form.object %>
 
   <%# 日付 %>
         <div class="weight-bold-text">
