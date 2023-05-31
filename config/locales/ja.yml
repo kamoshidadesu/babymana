@@ -5,6 +5,10 @@ ja:
         start_time: "開始日時"
         end_time: "終了日時"
         schedule: "予定"
+      diary:
+        start_time: "日にち"
+        happy: "嬉しかったこと"
+        diary: "日記"
       user:
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
