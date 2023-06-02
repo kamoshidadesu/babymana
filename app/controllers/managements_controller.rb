@@ -18,7 +18,7 @@ class ManagementsController < ApplicationController
   end
 
   def show
-    @managements = Management.all.group_by { |management| management.start_time.to_date }
+    @managements = Management.where(start_time: @management.start_time.to_date.beginning_of_day..@management.start_time.to_date.end_of_day)
     if @management.user_id == current_user.id
     else
       redirect_to root_path

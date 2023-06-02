@@ -12,22 +12,19 @@
       </thead>
 
       <tbody>
-        <% @managements.each do |date, managements|%>
-            <tr>
-              <td class="calendar-show-date"><%= date %></td>
-            </tr>
-
-            <% managements.sort_by(&:start_time).each do |management|%>
-              <tr>
-                <td class="calendar-show-content"><%= management.start_time.strftime("%H:%M") %>
-                  <%= link_to "（変更する）", edit_management_path, method: :get, class: "calendar-show-btn" %>
-                  <%= link_to "(削除)", management_path(@management.id), method: :delete, class: "calendar-show-btn" %></td>
-                <td class="calendar-show-content"><%= management.record.name %></td>
-                <td class="calendar-show-content"><%= management.note%></td>
-              </tr>
-            <% end %>
-          <% end %>
-      </tbody>
+  <% @managements.each do |management| %>
+    <tr>
+      <td class="calendar-show-date"><%= management.start_time.strftime("%Y-%m-%d %H:%M") %></td>
+      <td class="calendar-show-content">
+        <%= management.start_time.strftime("%H:%M") %>
+        <%= link_to "（変更する）", edit_management_path(management), method: :get, class: "calendar-show-btn" %>
+        <%= link_to "(削除)", management_path(management), method: :delete, class: "calendar-show-btn" %>
+      </td>
+      <td class="calendar-show-content"><%= management.record.name %></td>
+      <td class="calendar-show-content"><%= management.note %></td>
+    </tr>
+  <% end %>
+</tbody>
     </table>
   </div>
 </div>
