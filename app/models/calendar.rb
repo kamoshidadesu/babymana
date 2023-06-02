@@ -10,9 +10,7 @@ class Calendar < ApplicationRecord
   private
 
     def start_end_check
-      errors.add(:end_time, "は開始時刻より前の時間には設定できません。")
-      if self.start_time > self.end_time
+      errors.add(:end_time, "は開始日時より前の時間には設定できません。") unless 
+        start_time < end_time
       end
     end
-
-end
