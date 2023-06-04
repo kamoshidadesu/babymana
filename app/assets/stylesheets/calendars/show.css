@@ -25,9 +25,9 @@ background-color: wheat;
 }
 
 .calendar-show-date{
-  color: red;
-  padding-top: 30px;
-  border: solid 1px black;
+  padding-top: 15px;
+  text-align: center;
+  font-size: large;
 }
 
 .calendar-show-content{
