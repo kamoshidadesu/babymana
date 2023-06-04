@@ -36,7 +36,9 @@
         </div>
         <%= form.text_area :content, placeholder: '予定内容' %>
 
-
+        <div class="return-frame">
+          <%= link_to "戻る", calendar_path(@calendar.id), method: :get, class: "return-btn"%>
+        </div>
         <div class="sell-btn-contents">
           <%= form.submit "保存する", class:"sell-btn" %>
         </div>
