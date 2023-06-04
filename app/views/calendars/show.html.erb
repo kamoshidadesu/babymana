@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
   <div class="calendar-show">
-    <h1 class="calendar-show-top">予定一覧</h1>
+    <h1 class="calendar-show-top">予定詳細</h1>
     <div class="calendar-show-date"><%= @calendar.start_time.strftime("%Y-%m-%d") %></div>
     <div class = "calendar-show-main">
       <table class= "table">
@@ -27,6 +27,9 @@
         </tbody>
     </table>
   </div>
+    <div class="return-frame">
+      <%= link_to "戻る", "/", class: "return-btn"%>
+    </div>
 </div>
 
 <%= render "shared/fotter" %>
