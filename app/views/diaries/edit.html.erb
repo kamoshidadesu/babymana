@@ -41,6 +41,9 @@
         </div>
       </div>
 
+        <div class="return-frame">
+          <%= link_to "戻る", diary_path(@diary.id), method: :get, class: "return-btn"%>
+        </div>
         <div class="sell-btn-contents">
             <%= form.submit "保存する" ,class:"sell-btn" %>
         </div>

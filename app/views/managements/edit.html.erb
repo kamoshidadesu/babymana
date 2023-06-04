@@ -33,7 +33,9 @@
           <%= form.text_area :note, class:"text", placeholder: '備考欄' %>
         
 
-
+        <div class="return-frame">
+          <%= link_to "戻る", management_path(@management.id), method: :get, class: "return-btn"%>
+        </div>
         <div class="sell-btn-contents">
           <%= form.submit "保存する", class:"sell-btn" %>
         </div>

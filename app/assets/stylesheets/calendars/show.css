@@ -25,9 +25,9 @@ background-color: wheat;
 }
 
 .calendar-show-date{
-  color: red;
-  padding-top: 30px;
-  border: solid 1px black;
+  padding-top: 15px;
+  text-align: center;
+  font-size: large;
 }
 
 .calendar-show-content{
@@ -37,4 +37,16 @@ background-color: wheat;
 .calendar-show-btn{
   text-decoration: none;
   color: blue;
+}
+
+.return-frame{
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.return-btn{
+  border: solid 1px black;
+  padding: 3px;
+  text-decoration: none;
+  border-radius: 5px;
 }

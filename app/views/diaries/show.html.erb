@@ -44,7 +44,9 @@
           <p class="or-text">or</p>
           <%= link_to "削除", diary_path(@diary.id), method: :delete, class: "diary-edit-destroy" %>
       </div>
-
+      <div class="return-frame">
+        <%= link_to "戻る", new_diary_path, class: "return-btn"%>
+      </div>
     </div>
   </div>
 <%= render "shared/fotter" %>
