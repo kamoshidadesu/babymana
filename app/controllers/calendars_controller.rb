@@ -20,7 +20,7 @@ class CalendarsController < ApplicationController
   end
 
   def show
-    @calendars = Calendar.all.group_by { |calendar| calendar.start_time.to_date }
+    @calendars = Calendar.where(start_time: @calendar.start_time.to_date.beginning_of_day..@calendar.start_time.to_date.end_of_day)
     if @calendar.user_id == current_user.id
     else
       redirect_to root_path
