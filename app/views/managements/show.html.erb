@@ -20,7 +20,7 @@
                 <%= link_to "（変更する）", edit_management_path(management), method: :get, class: "calendar-show-btn" %>
                 <%= link_to "(削除)", management_path(management), method: :delete, class: "calendar-show-btn" %>
               </td>
-              <td class="calendar-show-content"><%= management.record.name %></td>
+              <td class="calendar-show-content"><%= management.record.image_path %></td>
               <td class="calendar-show-content"><%= management.note %></td>
             </tr>
           <% end %>  
