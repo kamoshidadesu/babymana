@@ -22,5 +22,10 @@ document.addEventListener('DOMContentLoaded', function(){
     // 表示する画像を生成
     const previewImage = document.createElement('img');
     previewImage.setAttribute('class', 'preview-image');
+    previewImage.setAttribute('src', blob);
+
+    // 生成したHTMLの要素をブラウザに表示させる
+    previewWrapper.appendChild(previewImage);
+    previewList.appendChild(previewWrapper);
   });
 });
