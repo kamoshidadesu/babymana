@@ -4,7 +4,7 @@
 
       <div class="diary-main-top">
         <h2 class="diary-title">★成長日記★</h2>
-        <%= form_with(model: @diary, local: true) do |form| %>
+        <%= form_with(model: @diary, id: 'new_diary', local: true) do |form| %>
         <%= render 'layouts/error-messages', model: form.object %>
 
   <%# 日付 %>
@@ -36,6 +36,7 @@
           写真
         </div>
         <%= image_tag @diary.image, class: "diary-image" if @diary.image.attached? %>
+        <div id="previews"></div>
         <div class="click-upload" >
           <%= form.file_field :image, class: "picture" %>
         </div>
