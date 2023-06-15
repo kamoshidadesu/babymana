@@ -35,7 +35,7 @@
           写真
         </div>
         <div class="click-upload" >
-          <%= image_tag @diary.image, class: "diary-image" if @diary.image.attached? %>
+          <%= image_tag @diary.images[0], class: "diary-image" if @diary.images.attached? %>
         </div>
       </div>
 
