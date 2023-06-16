@@ -31,13 +31,23 @@
     <%# 写真 %>
       <div class="img-upload">
         <div class="weight-bold-text">
-        <%= image_tag "camera.png", class:"music-icon"%>
+          <%= image_tag "camera.png", class:"music-icon"%>
           写真
         </div>
+        <div id="previews"></div>
         <div class="click-upload" >
-          <%= image_tag @diary.images[0], class: "diary-image" if @diary.images.attached? %>
-        </div>
-      </div>
+          <%if @diary.images.attached? %>
+            <%= image_tag @diary.images[0], class: "diary-image" %>
+              <div class="other-images">
+                <%= @diary.images[1..-1].each do |image| %>
+                  <div class="other-image">
+                    <%= image_tag image %>
+                  </div>
+                <%end%>
+              </div>
+          </div>
+        <%end%>
+      </div><%# img-upload%>
 
       <div class ="btn-list">
           <%= link_to "編集", edit_diary_path, method: :get, class: "diary-edit-destroy" %>
