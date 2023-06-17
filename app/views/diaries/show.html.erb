@@ -34,19 +34,13 @@
           <%= image_tag "camera.png", class:"music-icon"%>
           写真
         </div>
-        <div id="previews"></div>
         <div class="click-upload" >
           <%if @diary.images.attached? %>
-            <%= image_tag @diary.images[0], class: "diary-image" %>
-              <div class="other-images">
-                <%= @diary.images[1..-1].each do |image| %>
-                  <div class="other-image">
-                    <%= image_tag image %>
-                  </div>
-                <%end%>
-              </div>
-          </div>
-        <%end%>
+            <% @diary.images.each do |image| %>
+              <%= image_tag image, class: "diary-image"  %>
+            <%end%>
+          <%end%>
+        </div>
       </div><%# img-upload%>
 
       <div class ="btn-list">

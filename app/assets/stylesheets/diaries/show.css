@@ -1,6 +1,6 @@
 .diary-image{
-  height: 50vh;
-  width: 45vw;
+  height: 30vh;
+  width: 25vw;
   min-height: 150px;
   background-color: rgb(243, 238, 238);
   object-fit: contain;

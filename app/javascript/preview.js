@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const deleteButton = document.createElement("div");
     deleteButton.setAttribute("class", "image-delete-button");
     deleteButton.innerText = "削除";
-    
+
     // 削除ボタンをクリックしたらプレビューとfile_fieldを削除させる
     deleteButton.addEventListener("click", () => deleteImage(dataIndex));
 
