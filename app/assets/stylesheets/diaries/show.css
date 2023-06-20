@@ -19,8 +19,16 @@ text-align: center;
 justify-content: center;
 }
 
+.click-upload{
+  max-width: 600px; margin: 0 auto 50px;
+}
+
 .diary-image{
   border-radius: 5px;
+  display: block;
+  margin: 10px 0px;
+  object-fit: contain;
+
 }
 
 .diary-edit-destroy{

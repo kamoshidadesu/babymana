@@ -1,4 +1,6 @@
 <%= render "shared/header" %>
+<link rel="stylesheet" type="text/css" href="https://www.jungleocean.com/demo/jquery-slick/css/slick-theme.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.jungleocean.com/demo/jquery-slick/css/slick.css"/>
   <div class="diary-contents">
     <div class="diary-main">
 
@@ -52,5 +54,15 @@
         <%= link_to "戻る", new_diary_path, class: "return-btn"%>
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('click-upload').slick({
+        dots: true,
+      });
+    });
+  </script>
   </div>
+  
 <%= render "shared/fotter" %>
