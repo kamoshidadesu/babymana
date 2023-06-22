@@ -35,11 +35,20 @@
         <%= image_tag "camera.png", class:"music-icon"%>
           写真
         </div>
-        <%= image_tag @diary.images, class: "diary-image" if @diary.images.attached? %>
-        <div id="previews"></div>
-        <div class="click-upload" >
-          <%= form.file_field :image, class: "picture" %>
-        </div>
+        
+          <% if @diary.images.attached? %>
+            <div id='previews'>
+              <% @diary.images.each do |image| %>
+                <div class="preview" data-index="<%= image.id %>">
+                <%= image_tag image, class: "preview-image" %>
+                  <div class="image-delete-button">削除</div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="click-upload" >
+            <%= form.file_field :images, multiple: true, class: "picture" %>
+          </div>
       </div>
 
         <div class="return-frame">
