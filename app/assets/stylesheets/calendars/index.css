@@ -1,7 +1,6 @@
 .index-top-content{
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .schedule-icon{
@@ -9,10 +8,23 @@ text-decoration: none;
 color: black;
 }
 
+.calendar-top{
+  height: 60vh;
+  width: 110%;
+  padding-bottom: 50px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(picnic.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: wheat;
+}
+
 .kid-image{
-width: 120vw;
+width: 119vw;
 height: 60vh;
-line-height: 0;
 object-fit: cover;
 }
 

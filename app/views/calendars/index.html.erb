@@ -1,9 +1,7 @@
 <%= render "shared/header" %>
   <div class="calendar-index">
     <div class="index-top-content">
-      <div class="calendar-top">
-        <%= image_tag "picnic.png", class: "kid-image" %>
-      </div>
+      <div class="calendar-top"></div>
     </div>
     <%= month_calendar events: @calendars do |date, calendars| %>
       <%= link_to date.day, new_calendar_path, class:"schedule-icon" %>

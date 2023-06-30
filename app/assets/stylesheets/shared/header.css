@@ -32,6 +32,7 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 1vh 0;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .lists-left {
@@ -46,11 +47,10 @@
   margin-right: 5px;
 }
 
-.pagelist{
+.page-list{
   text-decoration: none;
   margin-right: 3vw;
   color: rgb(237, 127, 222);
-  font-family: fantasy;
 }
 
 .lists-right {
