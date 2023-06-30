@@ -1,8 +1,8 @@
 class Record < ActiveHash::Base
   self.data = [
     { id: 1, name: '選択してください' },
-    { id: 2, name: 'ミルク' },
-    { id: 3, name: '食事' },
+    { id: 2, name: 'ミルク', image_path: 'milk' },
+    { id: 3, name: '食事', image_path: 'meal' },
     { id: 4, name: 'うんち' },
     { id: 5, name: 'おむつ' },
     { id: 6, name: 'お風呂' },

@@ -1,10 +1,12 @@
 <%= render "shared/header" %>
+<link rel="stylesheet" type="text/css" href="https://www.jungleocean.com/demo/jquery-slick/css/slick-theme.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.jungleocean.com/demo/jquery-slick/css/slick.css"/>
   <div class="diary-contents">
     <div class="diary-main">
 
       <div class="diary-main-top">
         <h2 class="diary-title">★成長日記★</h2>
-        <%= form_with(model: @diary, local: true) do |form| %>
+        <%= form_with(model: @diary, id: 'new_diary', local: true) do |form| %>
         <%= render 'layouts/error-messages', model: form.object %>
 
   <%# 日付 %>
@@ -35,9 +37,15 @@
         <%= image_tag "camera.png", class:"music-icon"%>
           写真
         </div>
-        <%= image_tag @diary.image, class: "diary-image" if @diary.image.attached? %>
+          <% if @diary.images.attached? %>
+            <% @diary.images.each do |image| %>
+              <%= image_tag image, class: "diary-image" %>
+              <div class="image-delete-button">削除</div>
+            <% end %>
+          <% end %>
+        <div id="previews"></div>
         <div class="click-upload" >
-          <%= form.file_field :image, class: "picture" %>
+          <%= form.file_field :images, name: 'diary[images][]', data: {new: 0} %>
         </div>
       </div>
 
@@ -50,5 +58,15 @@
         <% end %>
       </div><%# diary-main-top%>
     </div><%# diary-main%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('click-upload').slick({
+        dots: true,
+      });
+    });
+  </script>
+  </div>
 
   <%= render "shared/fotter" %>

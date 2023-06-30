@@ -15,7 +15,7 @@
       </div>
       <%= form.collection_select(:record_id, Record.all, :id, :name, {}, class: "record-icon") do |record| %>
         <%= form.options_for_select([[record.name, record.id]], @management.record_id) %>
-        <%= form.image_tag("#{record.image_path}.png", class: "record-icon-lists") %>
+        <%= form.image_tag("images/#{record.image_path}.png", class: "record-icon-lists") %>
       <% end %>
 
       <%# 日時 %>

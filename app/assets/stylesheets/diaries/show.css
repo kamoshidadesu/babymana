@@ -1,6 +1,6 @@
 .diary-image{
-  height: 50vh;
-  width: 45vw;
+  height: 30vh;
+  width: 25vw;
   min-height: 150px;
   background-color: rgb(243, 238, 238);
   object-fit: contain;
@@ -19,8 +19,16 @@ text-align: center;
 justify-content: center;
 }
 
+.click-upload{
+  max-width: 500px; margin: 0 auto 50px;
+}
+
 .diary-image{
   border-radius: 5px;
+  display: block;
+  margin: 10px 0px;
+  object-fit: contain;
+
 }
 
 .diary-edit-destroy{
