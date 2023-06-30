@@ -6,7 +6,7 @@
   width: 100vw;
   padding: 2vh 15vw;
   display: flex;
-  background-color: pink;
+  background-color: rgb(77, 155, 223);
 }
 
 .icon-bar-contents{
@@ -16,12 +16,13 @@
 }
 
 .header-baby-icon {
-  width: 5vw;
+  width: 20vh;
+  height: 150%;
 }
 
 .top-list {
   font-size: 30px;
-  color: rgb(138, 255, 80);
+  color: rgb(255, 176, 80);
   font-weight: 800;
   text-decoration: none;
   font-family: fantasy;

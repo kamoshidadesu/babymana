@@ -2,7 +2,7 @@
   width: 100%;
   min-width: 800px;
   height: 115px;
-  background-color: pink;
+  background-color: rgb(77, 155, 223);
   display: flex;
   flex-direction: column;
 }
