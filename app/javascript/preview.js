@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const newFileField = document.createElement('input');
     newFileField.setAttribute('type', 'file');
     newFileField.setAttribute('name', 'diary[images][]');
+    newFileField.setAttribute('multiple', 'true');
 
     // 最後のfile_fieldを取得
     const lastFileField = document.querySelector('input[type="file"][name="diary[images][]"]:last-child');

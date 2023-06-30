@@ -39,7 +39,7 @@
         </div>
           <% if @diary.images.attached? %>
             <% @diary.images.each do |image| %>
-              <%= image_tag image, class: "diary-image"  %>
+              <%= image_tag image, class: "diary-image" %>
               <div class="image-delete-button">削除</div>
             <% end %>
           <% end %>
