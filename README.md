@@ -87,12 +87,13 @@ https://docs.google.com/spreadsheets/d/1qWRjgatBOHQX7FAR_dTtmNhi9KUdqrQ2Z0BdDrw-
 
 ##  usersテーブル
 
-| Column             | Type   | Option                    |
-| ------------------ | -------| ------------------------- |
-| name               | string | null: false               |
-| nickname           | string | null: false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
+| Column             | Type    | Option                    |
+| ------------------ | ------- | ------------------------- |
+| name               | string  | null: false               |
+| nickname           | string  | null: false               |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| gender_id          | integer | null: false               |
 
 ### Association
 
