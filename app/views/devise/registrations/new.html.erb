@@ -27,6 +27,13 @@
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
+      <label class="form-text">ママ or パパ</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:gender_id, Gender.all, :id, :name,{}, {class:"input-default"}) %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
       <span class="indispensable">必須</span>
     </div>
