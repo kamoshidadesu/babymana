@@ -39,10 +39,8 @@ ActiveRecord::Schema.define(version: 2023_04_30_025425) do
     t.string "schedule", null: false
     t.string "content"
     t.bigint "user_id", null: false
-    t.bigint "management_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["management_id"], name: "index_calendars_on_management_id"
     t.index ["user_id"], name: "index_calendars_on_user_id"
   end
 
@@ -71,6 +69,7 @@ ActiveRecord::Schema.define(version: 2023_04_30_025425) do
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.integer "gender", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -81,7 +80,6 @@ ActiveRecord::Schema.define(version: 2023_04_30_025425) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "calendars", "managements"
   add_foreign_key "calendars", "users"
   add_foreign_key "diaries", "users"
   add_foreign_key "managements", "users"
