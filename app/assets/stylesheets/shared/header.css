@@ -62,13 +62,19 @@
 
 .user-nickname {
   text-decoration: none;
-  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.user-gender {
+  text-decoration: none;
   color: #333333;
   font-weight: bold;
 }
 
-
 .logout {
+  margin-left: 3vh;
   text-decoration: none;
   color: #333333;
 }
