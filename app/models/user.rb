@@ -11,12 +11,13 @@ class User < ApplicationRecord
   validates :password,
             format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i },
             confirmation: true
+
 # ユーザーの新規登録には、ニックネーム、メールアドレス、性別、
 validates :name,
             presence: true
 validates :nickname,
           presence: true
-validates :gender,
+validates :gender_id,
           presence: true
 
   has_many :calendars
@@ -24,5 +25,5 @@ validates :gender,
   has_many :managements
 
   #ジャンルの選択が「---」の時は保存できないようにする
-  validates :gender_id, numericality: { other_than: 1, message: "を選択してください" }  
+  #validates :gender_id, numericality: { other_than: 1, message: "を選択してください" }  
 end
