@@ -25,5 +25,5 @@ validates :gender_id,
   has_many :managements
 
   #ジャンルの選択が「---」の時は保存できないようにする
-  #validates :gender_id, numericality: { other_than: 1, message: "を選択してください" }  
+  validates :gender_id, numericality: { other_than: 1, message: "を選択してください" }  
 end
