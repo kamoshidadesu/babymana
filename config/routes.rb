@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :managements 
   resources :calendars 
   resources :diaries
+  resources :users, only: :show
 end
