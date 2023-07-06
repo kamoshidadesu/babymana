@@ -1,4 +1,5 @@
 class ManagementsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_management, only: [:show, :edit, :update, :destroy]
 
   def new
