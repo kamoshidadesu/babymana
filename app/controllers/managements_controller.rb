@@ -20,6 +20,7 @@ class ManagementsController < ApplicationController
 
   def show
     @managements = Management.where(start_time: @management.start_time.to_date.beginning_of_day..@management.start_time.to_date.end_of_day)
+                              .order(:start_time)
     if @management.user_id == current_user.id
     else
       redirect_to root_path
