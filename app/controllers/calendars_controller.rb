@@ -21,6 +21,7 @@ class CalendarsController < ApplicationController
 
   def show
     @calendars = Calendar.where(start_time: @calendar.start_time.to_date.beginning_of_day..@calendar.start_time.to_date.end_of_day)
+                          .order(:start_time) #start_time列を昇順でソートして取得します
     if @calendar.user_id == current_user.id
     else
       redirect_to root_path
