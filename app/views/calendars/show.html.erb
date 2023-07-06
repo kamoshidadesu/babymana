@@ -15,10 +15,12 @@
         <tbody>
           <% @calendars.each do |calendar| %>
             <tr>
-              <td class="calnedar-show-content">
+              <td class="calendar-show-content">
                 <%= calendar.start_time.strftime("%H:%M") %>~<%= calendar.end_time.strftime("%H:%M") %>
-                <%= link_to "(変更する)", edit_calendar_path(calendar), method: :get, class: "calendar-show-btn" %>
-                <%= link_to "(削除する)", calendar_path(calendar), method: :delete, class: "calendar-show-btn" %>
+                  <div class="calendar-show-btns">
+                    <%= link_to "(変更する)", edit_calendar_path(calendar), method: :get, class: "calendar-show-btn" %>
+                    <%= link_to "(削除する)", calendar_path(calendar), method: :delete, class: "calendar-show-btn" %>
+                  </div>
               </td>
               <td class="calendar-show-content"><%= calendar.schedule %></td>
               <td class="calendar-show-content"><%= calendar.content %></td>

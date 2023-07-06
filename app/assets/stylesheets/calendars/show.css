@@ -32,6 +32,12 @@ background-color: wheat;
 
 .calendar-show-content{
   border: solid 1px black;
+  border-collapse: collapse ;
+}
+
+.calendar-show-btns{
+  margin-bottom: 2px;
+  
 }
 
 .calendar-show-btn{
@@ -49,4 +55,7 @@ background-color: wheat;
   padding: 3px;
   text-decoration: none;
   border-radius: 5px;
+}
+.td{
+  border: solid black;
 }
