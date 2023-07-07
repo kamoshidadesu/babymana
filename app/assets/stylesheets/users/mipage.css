@@ -1,0 +1,26 @@
+.mypage-top{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.mypage-main{
+  background-color: antiquewhite;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.mypage-content{
+  border: solid 2px black;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.mypage-edit-btn{
+  border: solid 2px black ;
+  width: 3vw;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: red;
+}
+
