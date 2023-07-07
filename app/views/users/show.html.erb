@@ -33,14 +33,14 @@
     </div>
     </div>
 
-    <div class="mypage-sub">
+    <div class="mypage-sub-left">
       <h2 class="calendar-show-top">予定</h2>
       <table class= "table">
           <thead>
             <tr class = "show-titles" >
-              <th class="calendar-show-title">時間</th>
-              <th class="calendar-show-title">予定</th>
-              <th class="calendar-show-title">内容</th>
+              <th class="mypage-show-title">時間</th>
+              <th class="mypage-show-title">予定</th>
+              <th class="mypage-show-title">内容</th>
             </tr>
           </thead>
 
@@ -56,6 +56,35 @@
                 </td>
                 <td class="mypage-show-content"><%= calendar.schedule %></td>
                 <td class="mypage-show-content"><%= calendar.content %></td>
+              </tr>
+            <% end %>
+          </tbody>
+      </table>
+    </div>
+
+    <div class="mypage-sub-right">
+      <h2 class="calendar-show-top">日記</h2>
+      <table class= "table">
+          <thead>
+            <tr class = "show-titles" >
+              <th class="calendar-show-title">日にち</th>
+              <th class="calendar-show-title">嬉しかったこと</th>
+              <th class="calendar-show-title">日記</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @diaries.each do |diary| %>
+              <tr>
+                <td class="mypage-show-content">
+                  <%= diary.start_time.strftime("%Y年%m月%d日")%>
+                    <div class="mypage-show-btns">
+                      <%= link_to "(変更する)", edit_diary_path(diary), method: :get, class: "calendar-show-btn" %>
+                      <%= link_to "(削除する)", diary_path(diary), method: :delete, class: "calendar-show-btn" %>
+                    </div>
+                </td>
+                <td class="mypage-show-content"><%= diary.happy %></td>
+                <td class="mypage-show-content"><%= diary.diary %></td>
               </tr>
             <% end %>
           </tbody>

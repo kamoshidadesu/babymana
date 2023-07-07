@@ -39,10 +39,25 @@
   border-collapse: collapse ;
 }
 
-.mypage-sub{
+.mypage-sub-left{
   flex-direction: column;
-  text-align: left;
-  float: left;
   background-color: antiquewhite;
+  float: left;
+  width: 40vw;
+}
+
+.mypage-show-title{
+  border: solid 1px black;
+  border-collapse: collapse ;
+  justify-content: space-around;
+  padding-right: 200px;
+  
+}
+
+.mypage-sub-right{
+  flex-direction: column;
+  background-color: antiquewhite;
+  float: right;
+  width: 45vw;
 }
 

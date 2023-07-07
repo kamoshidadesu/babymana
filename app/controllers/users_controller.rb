@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @name = current_user.name
     @gender = current_user.gender.name
     @calendars = current_user.calendars
+    @diaries = current_user.diaries
   end
 
   def edit
