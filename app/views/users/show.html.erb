@@ -1,32 +1,65 @@
 <%= render "shared/header" %>
 <div class ="mypage-top">
-  <div class ="mypage-main">
-    <div class="mypage-main-contents">
-      <h2 class="mypage-title">
-        <%= current_user.nickname %>のマイページ
-      </h2>
-    </div>
+  <div class = "mypage">
+    <div class ="mypage-main-top">
+    <div class ="mypage-main">
+      <div class="mypage-main-contents">
+        <h2 class="mypage-title">
+          <%= current_user.nickname %>のマイページ
+        </h2>
+      </div>
 
-    <div class ="mypage-contents">
-      <div class="form-group">
-        <div class='form-text-wrap'>
-          <h3 class="mypage-name">NAME</h3>
-          <div class= "mypage-content"><%= current_user.name %></div>
+      <div class ="mypage-contents">
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <h3 class="mypage-name">NAME</h3>
+            <div class= "mypage-content"><%= current_user.name %></div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class ="mypage-contents">
-      <div class="form-group">
-        <div class='form-text-wrap'>
-          <h3 class="mypage-name">parent</h3>
-          <div class= "mypage-content"><%= current_user.gender.name%></div>
+      <div class ="mypage-contents">
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <h3 class="mypage-name">parent</h3>
+            <div class= "mypage-content"><%= current_user.gender.name%></div>
+          </div>
         </div>
       </div>
+
+      <div class ="btn-list">
+        <%= link_to "編集", edit_user_path, method: :get, class: "mypage-edit-btn" %>
+      </div>
+    </div>
     </div>
 
-    <div class ="btn-list">
-      <%= link_to "編集", edit_user_path, method: :get, class: "mypage-edit-btn" %>
+    <div class="mypage-sub">
+      <h2 class="calendar-show-top">予定</h2>
+      <table class= "table">
+          <thead>
+            <tr class = "show-titles" >
+              <th class="calendar-show-title">時間</th>
+              <th class="calendar-show-title">予定</th>
+              <th class="calendar-show-title">内容</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @calendars.each do |calendar| %>
+              <tr>
+                <td class="mypage-show-content">
+                  <%= calendar.start_time.strftime("%H:%M") %>~<%= calendar.end_time.strftime("%H:%M") %>
+                    <div class="mypage-show-btns">
+                      <%= link_to "(変更する)", edit_calendar_path(calendar), method: :get, class: "calendar-show-btn" %>
+                      <%= link_to "(削除する)", calendar_path(calendar), method: :delete, class: "calendar-show-btn" %>
+                    </div>
+                </td>
+                <td class="mypage-show-content"><%= calendar.schedule %></td>
+                <td class="mypage-show-content"><%= calendar.content %></td>
+              </tr>
+            <% end %>
+          </tbody>
+      </table>
     </div>
   </div>
 </div>

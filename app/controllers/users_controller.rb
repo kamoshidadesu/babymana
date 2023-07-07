@@ -3,8 +3,10 @@ class UsersController < ApplicationController
     @nickname = current_user.nickname
     @name = current_user.name
     @gender = current_user.gender.name
+    @calendars = current_user.calendars
   end
 
   def edit
   end
+
 end
