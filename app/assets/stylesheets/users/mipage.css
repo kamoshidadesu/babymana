@@ -1,5 +1,5 @@
 .mypage-top{
-  
+  width: 100%;
 }
 
 .mypage{
@@ -37,13 +37,16 @@
 .mypage-show-content{
   border: solid 1px black;
   border-collapse: collapse ;
+  overflow-wrap: break-word;
+  text-align: left;
+  table-layout: fixed;
 }
 
 .mypage-sub-left{
   flex-direction: column;
   background-color: antiquewhite;
   float: left;
-  width: 40vw;
+  width: 50%;
 }
 
 .mypage-show-title{
@@ -57,7 +60,18 @@
 .mypage-sub-right{
   flex-direction: column;
   background-color: antiquewhite;
-  float: right;
-  width: 45vw;
+  float:right;
+  width: 50%;
 }
 
+.mypage-table{
+  background-color: white;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mypage-table-right{
+  background-color: white;
+  width: 10vw;
+  border-collapse: collapse;
+}
