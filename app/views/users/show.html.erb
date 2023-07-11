@@ -2,35 +2,39 @@
 <div class ="mypage-top">
   <div class = "mypage">
     <div class ="mypage-main-top">
-    <div class ="mypage-main">
-      <div class="mypage-main-contents">
-        <h2 class="mypage-title">
-          <%= current_user.nickname %>のマイページ
-        </h2>
+      <div class = "mypage-image-left">選択してください
       </div>
+      <div class ="mypage-main">
+        <div class="mypage-main-contents">
+          <h2 class="mypage-title">
+            <%= current_user.nickname %>のマイページ
+          </h2>
+        </div>
 
-      <div class ="mypage-contents">
-        <div class="form-group">
-          <div class='form-text-wrap'>
-            <h3 class="mypage-name">NAME</h3>
-            <div class= "mypage-content"><%= current_user.name %></div>
+        <div class ="mypage-contents">
+          <div class="form-group">
+            <div class='form-text-wrap'>
+              <h3 class="mypage-name">NAME</h3>
+              <div class= "mypage-content"><%= current_user.name %></div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class ="mypage-contents">
-        <div class="form-group">
-          <div class='form-text-wrap'>
-            <h3 class="mypage-name">parent</h3>
-            <div class= "mypage-content"><%= current_user.gender.name%></div>
+        <div class ="mypage-contents">
+          <div class="form-group">
+            <div class='form-text-wrap'>
+              <h3 class="mypage-name">parent</h3>
+              <div class= "mypage-content"><%= current_user.gender.name%></div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class ="btn-list">
-        <%= link_to "編集", edit_user_path, method: :get, class: "mypage-edit-btn" %>
+        <div class ="btn-list">
+          <%= link_to "編集", edit_user_path, method: :get, class: "mypage-edit-btn" %>
+        </div>
       </div>
-    </div>
+      <div class = "mypage-image-right">選択してください
+      </div>
     </div>
 
     <div class="mypage-sub-left">
