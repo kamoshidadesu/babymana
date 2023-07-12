@@ -1,6 +1,7 @@
 <%= render "shared/header" %>
 <div class ="mypage-top">
   <div class = "mypage">
+  <%= form_with(model: @user, id: 'user_new', local: true) do |form| %>
     <div class ="mypage-main-top">
       <div class = "mypage-image-left">選択してください
       </div>
@@ -35,6 +36,7 @@
       </div>
       <div class = "mypage-image-right">選択してください
       </div>
+    <% end %>
     </div>
 
     <div class="mypage-sub-left">

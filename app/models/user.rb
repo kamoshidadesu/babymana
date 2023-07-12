@@ -20,6 +20,7 @@ validates :nickname,
 validates :gender_id,
           presence: true
 
+  has_one_attached :image
   has_many :calendars
   has_many :diaries
   has_many :managements
